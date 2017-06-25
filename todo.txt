@@ -1,0 +1,479 @@
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"match_all": {}}
+      ],
+      "filter": [
+        { "range": { "features.linha_reta_distance": { "gte": 1 } } },
+        { "range": { "features.rpm.mean": { "gte": 0 } } },
+        { "range": { "features.co2.mean": { "gte": 0.1 } } },
+        { "term":  { "features.speed.unit.keyword": "km/h" } }
+      ]
+    }
+  },
+  "aggs": { 
+    "co2_stats": { "stats": { "field": "features.co2.mean" } },
+    "duration_stats": { "stats": { "field": "features.duration_seconds" } },
+    "speed_stats": { "stats": { "field": "features.speed.mean" } },
+    "linha_reta_distance_stats": { "stats": { "field": "features.linha_reta_distance" } },
+    "rpm_stats": { "stats": { "field": "features.rpm.mean" } },
+    "consumption_stats": { "stats": { "field": "features.consumption.mean" } },
+    "total_distance_stats": { "stats": { "field": "features.total_distance" } }
+  }
+}
+
+
+
+POST teste/group/AVzfeTJoSyw-WpZ1ULU5/_update
+{
+  "doc": {
+    "idade": 35
+  }
+}
+
+
+
+
+
+
+
+
+
+- todo 
+	- reler o artigo grande do envirocar. talvez haja alguma
+	  referencia relevante por lá.
+
+
+
+- visualizações que eu já vi
+	- para um carro, a velocidade ao longo do deslocamento
+	
+	- ao longo do tempo, correlacao de velociade com rpm e
+	  emissao de gas carbonico e consumo de combustivel.
+
+	- ruas que mais poluem, para uma cidade pequena (musnter)
+	- ruas que sao mais rapidas e mais devagar para uma 
+	  cidade pequena (musnter)
+
+	- eu mesmo poderia achar alguma forma de agrupar os
+      motoristas e encontrar uns padroes de comportamento neles
+
+    - no meu artigo, ainda nao fiz o plot individual
+
+    - poderia tb tentar ver a velocidade media de uma determinada
+      rua e ver se o cara anda acima ou abaixo da media da
+      velocidade
+      
+
+
+- desafios sociais de hoje em dia
+	desenvolver a mobilidade de um modo sustentavel
+	mitigar o impacto no meio ambiente
+
+	banco de dados que se propoe a ser rico, unindo
+	dados de telemetria com dados relativos a meio ambiente,
+	como co2, barulho, consumo de combustivel
+
+	na introdução, tb devo dizer como eh estruturado o 
+	artigo
+
+
+
+
+
+
+
+
+
+-- quando eu for fazer o 'filter' no kibana, pego a parte que está dentro de query. 
+   ou seja todo o dict dentro de query
+
+
+-- america do sul
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": {
+        "geo_bounding_box": {
+          "features.five_points": {
+            "top_left": {
+              "lat": 5.24,
+              "lon": -69
+            },
+            "bottom_right": {
+              "lat": -31,
+              "lon": -30
+            }
+          }
+        }
+      }
+    }
+  }  
+}
+
+-- america do norte
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": {
+        "geo_bounding_box": {
+          "features.five_points": {
+            "top_left": {
+              "lat": 49.3,
+              "lon": -125
+            },
+            "bottom_right": {
+              "lat": 24.6,
+              "lon": -57
+            }
+          }
+        }
+      }
+    }
+  }  
+}
+
+
+
+
+
+
+
+
+
+
+-- europa
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": {
+        "geo_bounding_box": {
+          "features.five_points": {
+            "top_left": {
+              "lat": 70.3,
+              "lon": -26
+            },
+            "bottom_right": {
+              "lat": 32.6,
+              "lon": 40.5
+            }
+          }
+        }
+      }
+    }
+  }  
+}
+
+
+
+-- india
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": {
+        "geo_bounding_box": {
+          "features.five_points": {
+            "top_left": {
+              "lat": 43,
+              "lon": 46
+            },
+            "bottom_right": {
+              "lat": 6.4,
+              "lon": 102
+            }
+          }
+        }
+      }
+    }
+  }  
+}
+
+
+
+
+
+
+
+
+
+-- Australia
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": {
+        "geo_bounding_box": {
+          "features.five_points": {
+            "top_left": {
+              "lat": 6.4,
+              "lon": 102
+            },
+            "bottom_right": {
+              "lat": -47,
+              "lon": 165
+            }
+          }
+        }
+      }
+    }
+  }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- dados com valores nao-zerados
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "must_not": [
+        {
+          "term": {
+            "features.co2.mean": {
+              "value": 0
+            }
+          }
+        },
+        {
+          "term": {
+            "features.rpm.mean": {
+              "value": 0
+            }
+          }
+        },
+        {
+          "term": {
+            "features.consumption.mean": {
+              "value": 0
+            }
+          }
+        },
+        {
+          "term": {
+            "features.speed.mean": {
+              "value": 0
+            }
+          }
+        }
+      ]
+    }
+  }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- exemplo com aggs
+GET people/group/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "aggs": {
+    "idade_maxima": {
+      "max": {
+        "field": "idade"
+      }
+    },
+    "idade_minima": {
+      "min": {
+        "field": "idade"
+      }
+    }
+  },
+  "script_fields": {
+    "xoxo": {
+      "script": {
+        "inline": "params._source"
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- query cheia de aggregations
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "aggs": {
+    "total_distance_max": { "max": { "field": "features.total_distance"}},
+    "total_distance_min": { "min": { "field": "features.total_distance"}},
+    
+    "speed_min": { "min": { "field": "features.speed.mean"}},
+    "speed_max": { "min": { "field": "features.speed.mean"}},
+    
+    "duration_min": { "min": { "field": "features.duration_seconds"}},
+    "duration_max": { "min": { "field": "features.duration_seconds"}},
+    
+    "co2_min": { "min": { "field": "features.co2.mean"}},
+    "co2_max": { "min": { "field": "features.co2.mean"}},
+    
+    "linha_reta_min": { "min": { "field": "features.linha_reta_distance"}},
+    "linha_reta_max": { "min": { "field": "features.linha_reta_distance"}},
+    
+    "rpm_min": { "min": { "field": "features.rpm.mean"}},
+    "rpm_max": { "min": { "field": "features.rpm.mean"}},
+    
+    "consumption_min": { "min": { "field": "features.consumption.mean"}},
+    "consumption_max": { "min": { "field": "features.consumption.mean"}},
+    
+    "year_min": { "min": { "field": "sensor.properties.constructionYear"}},
+    "year_max": { "min": { "field": "sensor.properties.constructionYear"}},
+    
+    "engine_min": { "min": { "field": "sensor.properties.engineDisplacement"}},
+    "engine_max": { "min": { "field": "sensor.properties.engineDisplacement"}}
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- mais uma query
+GET envirocar_reduced_3/group/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"match_all": {}}
+      ],
+      "filter": [
+        { 
+          "range": {
+            "sensor.properties.constructionYear": {
+              "gte": 567,
+              "lte": 9000
+            }
+          }
+        },
+        { 
+          "range": {
+            "sensor.properties.engineDisplacement": {
+              "gte": 601,
+              "lte": 90000
+            }
+          }
+        }
+
+      ]
+    }
+  }, 
+  "aggs": {
+    "total_distance_max": { "max": { "field": "features.total_distance"}},
+    "total_distance_min": { "min": { "field": "features.total_distance"}},
+    
+    "speed_min": { "min": { "field": "features.speed.mean"}},
+    "speed_max": { "max": { "field": "features.speed.mean"}},
+    
+    "duration_min": { "min": { "field": "features.duration_seconds"}},
+    "duration_max": { "max": { "field": "features.duration_seconds"}},
+    
+    "co2_min": { "min": { "field": "features.co2.mean"}},
+    "co2_max": { "max": { "field": "features.co2.mean"}},
+    
+    "linha_reta_min": { "min": { "field": "features.linha_reta_distance"}},
+    "linha_reta_max": { "max": { "field": "features.linha_reta_distance"}},
+    
+    "rpm_min": { "min": { "field": "features.rpm.mean"}},
+    "rpm_max": { "max": { "field": "features.rpm.mean"}},
+    
+    "consumption_min": { "min": { "field": "features.consumption.mean"}},
+    "consumption_max": { "max": { "field": "features.consumption.mean"}},
+    
+    "year_min": { "min": { "field": "sensor.properties.constructionYear"}},
+    "year_max": { "max": { "field": "sensor.properties.constructionYear"}},
+    
+    "engine_min": { "min": { "field": "sensor.properties.engineDisplacement"}},
+    "engine_max": { "max": { "field": "sensor.properties.engineDisplacement"}}
+  }
+}
+

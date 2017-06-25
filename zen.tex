@@ -1,184 +1,28 @@
-%==========================================
-%
-% Sibgrapi 2015 paper
-%
-%==========================================
-
-
-% Note that the a4paper option is mainly intended so that authors in
-% countries using A4 can easily print to A4 and see how their papers will
-% look in print - the typesetting of the document will not typically be
-% affected with changes in paper size (but the bottom and side margins will).
-% Use the testflow package mentioned above to verify correct handling of
-% both paper sizes by the user's LaTeX system.
-%
-% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
-% should be used if it is desired that the figures are to be displayed in
-% draft mode.
-%
 \documentclass[10pt, conference]{IEEEtran}
 
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
-% not currently provide for hyperlinked citations.
-% The latest version can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
 % *** GRAPHICS RELATED PACKAGES ***
-%
 \usepackage{subimages}
 \setfigdir{figs}
 
-
-
-
 % *** MATH PACKAGES ***
-%
 \usepackage[cmex10]{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics. If using
-% it, be sure to load this package with the cmex10 option to ensure that
-% only type 1 fonts will utilized at all point sizes. Without this option,
-% it is possible that some math symbols, particularly those within
-% footnotes, will be rendered in bitmap form which will result in a
-% document that can not be IEEE Xplore compliant!
-%
-% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
 \interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
 \usepackage{amsthm}
 \newtheorem{definition}{Definition}
 
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
-%\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
-% There is also a support site at:
-% http://algorithms.berlios.de/index.html
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
-%\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/tools/
-
-
-%\usepackage{mdwmath}
-%\usepackage{mdwtab}
-% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
-% especially mdwmath.sty and mdwtab.sty which are used to format equations
-% and tables, respectively. The MDWtools set is already installed on most
-% LaTeX systems. The lastest version and documentation is available at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-%\usepackage{eqparbox}
-% Also of notable interest is Scott Pakin's eqparbox package for creating
-% (automatically sized) equal width boxes - aka "natural width parboxes".
-% Available at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
-
-
-
 % *** PDF, URL AND HYPERLINK PACKAGES ***
-%
 \usepackage{hyperref}
 
 
-
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
-
-
-% correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
 \begin{document}
+
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Envirocar - Visualizacao marota}
+\title{Envirocar visualization \\ exploring an environmental and traffic data set}
 
 %------------------------------------------------------------------------- 
 % change the % on next lines to produce the final camera-ready version 
@@ -199,7 +43,7 @@
       Programa de Pos Graduacao em Ciencia da Computacao\\
       Universidade Federal do Rio Grande do Sul - UFRGS\\
       Porto Alegre, Brasil\\
-      line 4: Web page: \href{http://www.inf.ufrgs.br/~rczembrzuski}{inf.ufrgs.br/$\sim$rczembrzuski}}
+      Web page: \href{http://www.inf.ufrgs.br/~rczembrzuski}{inf.ufrgs.br/$\sim$rczembrzuski}}
   }
 \else
   \author{Sibgrapi paper ID: \jemsid \\ }
@@ -238,14 +82,14 @@
 
 
 \begin{abstract}
-Smartcars estao cada vez mais presentes no mundo de hoje. Dados sao coletados vindo de
-automoveis a cada instante. Um dos sistemas de coleta de informacao de automoveis eh o 
-Envirocar.
+Envirocar eh um projeto que coleta e armazena dados ambientais e dados de trafego. 
+Sao dados de sensores implantados dentro dos automoveis que trazem informacoes
+precisas sobre metricas dos automoveis e dados relevantes ao meio-ambiente, como
+emissao de gas-carbonico e consumo do automovel. 
 
-Esse artigo tem por objetivo plotar alguns graficos para ganhar intuicao sobre essa base
-de dados. Com isso, poderemos observar o comportamente dos usuarios que dirigem automoveis,
-saber de suas angustias e frustacoes. Por fim, poderemos ver se ela pode ser relevante
-para um trabalho mais concreto.
+Esse artigo tem por objetivo apresentar uma serie de 
+visualizacoes para analise exploratoria desse banco de dados. Com isso, teremos
+uma intuicao sobre se esse banco de dados pode servir para alguma coisa, ou nao.
 
 % DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
 %
@@ -268,19 +112,28 @@ envirocar; smartcars; kibana; geolocation; data visualization;
 
 %==========================================
 \section{Introduction}
-Aqui vai um bla bla bla
+Envirocar eh um projeto da Universidade de Munster. O objetivo 
+do projeto eh oferecer uma plataforma simples para coleta, 
+armazenamento e distribuicao de dados ambientais e dados de logistica
+de trafego [ref]. 
 
-
-%------------------------------------------------------------------------- 
-\paragraph*{Contributions}
-%
-Vamos ver no que podemos 
+A plataforma une dados gerados por sensores comuns,
+que vem na maioria dos automoveis atuais com sensores de 
+geolocalizacao, presente na maioria dos smartphones. Com isso,
+cria-se uma base de dados relevante para se medir o fluxo de automoveis
+nas avenidas e quantidade de emissao de poluentes nas cidades. 
 
 %------------------------------------------------------------------------- 
 \subsection{Motivacao}
 %
-We can roughly classify the approaches used for our application in three categories: first category, second category, and last category.\\
-Approaches in the first category were introduced by Pierre~\cite{Sibgrapi2015} using this and that techniques.
+Um dos grandes desafios da sociedade nos nossos dias eh preservar
+e desenvolver a mobilidade urbana de maneira sustentavel, isto eh,
+mitigar o impacto do transporte de passageiros meio-ambiente [ref].
+
+Alem disso, observar padroes de comportamento nos motoristas e nas
+cidades ao longo do mundo pode ser interessante tanto para ajuda-los
+em alguma coisa, quanto para ver diferencas culturais de paises e 
+culturas diferrentes evidenciadas no modo em que dirigem.
 
 
 %\subimages[htb]{Technique overview}{overview}{%
@@ -291,7 +144,22 @@ Approaches in the first category were introduced by Pierre~\cite{Sibgrapi2015} u
 %------------------------------------------------------------------------- 
 \subsection{Objetivos}
 %
-In order to produce this application, we start with this processing, followed by this technique. In order to cope with this challenge, we introduce this formulation to produce this intermediate result. The formulation leads to this type of system, which is efficiently solved by adapting this technique. The final result is produced by this transform. The whole process is schematized in \figref{overview}.
+O objetivo desse trabalho eh fazer uma exploracao basica pela base dados
+para ganhar intuicao sobre ela. Para observar se padroes basicos de 
+comportamento dos usuarios podem ser detectados conforme ideias
+basicas que se tem sobre isso e, por fim, para saber se a base de dados
+pode ser utilizada como base para experimentos mais complexos, como 
+treinamento de modelos de aprendizagem para um ganho no mundo relevante,
+como melhorias no trafego, detecação de anomalias em comportamentos 
+e outras cositas mais. 
+
+%------------------------------------------------------------------------- 
+\paragraph*{Contributions}
+%
+Acredito que esse trabalho possa dar um insight interessante sobre
+o quao relevante esse dataset pode ser para a observacao de comportamento
+dos motoristas.
+
 
 
 %------------------------------------------------------------------------- 
@@ -303,34 +171,156 @@ In order to produce this application, we start with this processing, followed by
 %==========================================
 \section{Caracterizacao dos dados}
 %
-Caracterização dos dados e problema/questões que a visualização pretende responde
+Aqui sera listada, primeiramente, uma descricao sobre a estrutura dos dados apresentados no data set e
+sem seguida sera apresentado o problema e questoes que as visualizacoes pretendem responder.
+
+\subsection{Caracterização dos dados}
+Cada item do dataset eh composto por dois atributos: 'properties' e 'features'. 
+
+\begin{itemize}
+
+  \item properties: possui as caracteristicas gerais do veiculo em questao. Esta subdividido
+  nos seguintes items:
+  \begin{itemize}
+    \item type -- atributo  categorico -- car or truck
+    \item constructionYear -- discreto 
+    \item model -- categorico
+    \item fuelType -- categorico
+    \item engineDisplacement -- discreto
+    \item manufacturer -- categorico
+  \end{itemize}    
+
+  \item features: possui as caracteristicas do deslocamento -- ou da 'viagem' em si. A viagem
+  eh caracterizada pela composicao, a cada dois segundos, do seguinte conjunto de dados:
+  \begin{itemize}
+    \item coordinates -- geoespacial -- lat/long
+    \item speed -- continuo -- km/h
+    \item rpm -- continuo -- u/min
+    \item gps accuracy -- nao sei -- nao sei
+    \item maf -- nao sei -- nao sei
+    \item engine load -- nao sei -- nao sei
+    \item gps pdop -- nao sei -- nao sei
+    \item o2 lambda voltage -- nao sei -- nao sei
+    \item throttle position -- nao sei -- nao sei
+    \item consumption -- continuo -- l/h
+    \item gps vdop -- nao sei -- nao sei
+    \item gps speed -- continuo -- km/h
+    \item gps bearing -- nao sei -- nao sei
+    \item intake pressure -- nao sei -- nao sei
+    \item co2 -- atributo continuo -- kg/h
+    \item time -- atributo temporal -- timestamp
+
+  \end{itemize}    
+
+\end{itemize}
+
+
+
+
+\subsection{Questoes a serem respondidas}
+Existe uma serie de questoes que me vem rah cabeca nesse instante que,
+inclusive, ja tomei notas.
+
+\begin{itemize}
+  \item quais marcas/modelos consomem mais gasolina?
+  \item quais marcas/modelos poluem mais o meio ambiente?
+  \item qual o perfil de pilotagem de cada automovel?
+  \item muita gente usa esse dataset?
+  \item de que lugares sao as pessoas que utilizam esse sistema? no Brasil, no mundo?
+  \item existe muita gente utilizando esse sistema hoje em dia?
+  \item quais os modelos e fabricantes mais comuns?
+  \item os modelos e fabricantes mais comum na Europa sao os mesmos do Brasil?
+  \item podemos descobrir quais sao as regioes mais poluidas e regioes menos poluidas?
+\end{itemize}
+
 
 
 
 %==========================================
-\section{Tccnica de visualização desenvolvida}
+\section{Preparacao dos dados para visualicao}
+Aqui eu vou descrever tudo o que fiz para baixar os dados.
+Aqui vou explicar por que usar o ElasticSearch tb.
+
+
+
+%==========================================
+\section{Tecnica de visualização desenvolvida}
 \label{sec:technique}
 %
- (incluir aqui informação sobre a implementação, biblioteca ou ferramenta utilizada)
+A exploracao dos dados foi feito com a ferramenta Kibana. 
+
+Ela, tipicamente, 
+eh utilizada para analise por inspeção manual e visualização de informações presentes no
+ElasticSearch (MARINO,  2015;  VAARANDI;  PIHELGAS,  2014).   Dessa  forma,  eh  ela  que
+ira apresentar os dados armazenados pelo Logstash no ElasticSearch, em uma interface,  via
+browser, altamente customizável com histogramas e outros painéis que propiciam uma visão
+geral sobre os dados.  O Kibana possibilita transformar os logs em informações úteis (valor)
+através  de Dashboards,  pois  permite  realizar  correlação  de  eventos,  filtrar logs
+por  origem, hospedeiros, entre outras combinações (VAARANDI; NIZINSKI, 2013)
 
 
 %------------------------------------------------------------------------- 
-\subsection{Heatmap}
-La vai
+\subsection{Histograma}
+Com o intuito de saber se muita gente ou se pouca gente utiliza a plataforma envirocar,
+foi plotado um histograma. Com ele, alem de saber se muita gente ou se pouca gente o utiliza,
+podemos ver a evolucao de sua utilizacao ao longo do tempo.
+
+\oneimage{ No eixo x, observamos a quantidade de uso da plataforma ao longo do tempo.}{.99}{simple_histogram.png}
+
 
 %------------------------------------------------------------------------- 
-\subsection{Pizza}
-Xoxo
+\subsection{Heatmaps}
+
+Outra duvida que eu tinha no inicio era a distribuicao geografica das pessoas que utilizam a plataforma. 
+Como a plataforma foi desenvolvida na Alemanha, supus que a maioria das pessoas estavam utilizando por lá. 
+Estava realmente curioso para saber se existem pessoas em outros lugares do mundo a utilizando tambem. 
+Para isso, um heatmap veio a calhar:
+
+\oneimage{ Aqui, podemos observar que a maioria dos usuarios, de fato, se encontra,
+na Europa. Contudo, existem pessoas utilizando em diversos outros pontos do globo também.}{.99}{heatmap.png}
+
 
 %------------------------------------------------------------------------- 
-\subsection{Histogramas}
-Jaja
+\subsection{Grafico em pizza}
+
+Baseado na visualizacao do heatmap, montei o globo dividido em 6 regioes: America do Norte, America do Sul,
+Australia, Europa, India. Com isso, criei um grafico de pizza, que mostra que, de fato, a maioria esmagadora
+das pessoas esta na Europa. Existe alguma representatividade tambem na America do Norte e na Australia.
+
+\oneimage{ 98\% dos deslocamentos esta na Europa. 1\% esta na America do Norte e 1\% esta
+na Australia. Outras regioes sao sao insignificantes, que nem visualizamos no grafico .}{.99}{pizza_por_regiao.png}
+
+
+
+%------------------------------------------------------------------------- 
+\subsection{Graficos em pizza}
+
+Uma duvida que eu tive foi quais sao os fabricantes de automovel mais presentes no banco de dados em cada regiao 
+do globo. Achei que a divisao por sunburst ficava um pouco complicada de visualizar; entao, fiz n graficos
+em pizza, em que cada grafico corresponde a uma regiao do globo e eh exibida a fatia de marcas por regiao.
+
+\oneimage{ Botar uma frase bacana aqui.}{.99}{marcas_por_regiao.png}
+
+
+%------------------------------------------------------------------------- 
+\subsection{Sunburst}
+
+Para responder a pergunta de quais sao os modelos mais utilizados por fabricante, achei bem interessante
+de fazer um sunburst. No primeiro nivel, observamos quais sao as 5 marcas mais utilizadas e no segundo nivel
+se observam os 3 modelos mais utilizados por cada fabricante. Achei prudente colocar somente 3 modelos no segundo
+nivel, pois eu tentei colocar mais e ficou uma coisa muito confusa.
+
+\oneimage{ Botar uma frase bacana aqui.}{.99}{sunburst_marca_modelo.png}
+
 
 
 %==========================================
 \section{Resultados}
 %
-Aqui vão os resultados
+Achei interessante que na Europa, a Toyota aparece como uma marca comum. BMW segue sendo top por la.
+Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. 
+Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. 
+Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. 
 
 
 
@@ -428,7 +418,7 @@ Aqui vão os resultados
 %==========================================
 \section{Conclusao}
 %
-Aqui vai minha conclusao.
+Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao.
 
 
 %==========================================

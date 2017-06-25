@@ -3,9 +3,14 @@
 \BOOKMARK [2][-]{subsection.1.2}{Objetivos}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Resultados esperados}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Caracterizacao dos dados}{}% 5
-\BOOKMARK [1][-]{section.3}{Tccnica de visualização desenvolvida}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Heatmap}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Pizza}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.3}{Histogramas}{section.3}% 9
-\BOOKMARK [1][-]{section.4}{Resultados}{}% 10
-\BOOKMARK [1][-]{section.5}{Conclusao}{}% 11
+\BOOKMARK [2][-]{subsection.2.1}{Caracterização dos dados}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Questoes a serem respondidas}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Preparacao dos dados para visualicao}{}% 8
+\BOOKMARK [1][-]{section.4}{Tecnica de visualização desenvolvida}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Histograma}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Heatmaps}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Grafico em pizza}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.4}{Graficos em pizza}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.5}{Sunburst}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Resultados}{}% 15
+\BOOKMARK [1][-]{section.6}{Conclusao}{}% 16
