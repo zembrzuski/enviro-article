@@ -1,3 +1,35 @@
+
+novos paperw
+
+https://scholar.google.com.br/scholar?q=dava+visualization+smartcars&btnG=&hl=pt-BR&as_sdt=0%2C5
+
+https://eng.uber.com/neural-networks/
+http://www.sciencedirect.com/science/article/pii/S0968090X13001630
+http://www.sciencedirect.com/science/article/pii/S0968090X14001612
+http://www.sciencedirect.com/science/article/pii/S0968090X1000166X
+http://www.sciencedirect.com/science/article/pii/S0968090X13001629
+http://ieeexplore.ieee.org/abstract/document/6398700/
+http://ieeexplore.ieee.org/abstract/document/5309662/?reload=true
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.30.4343
+http://www.sciencedirect.com/science/article/pii/S0968090X14001612
+http://www.sciencedirect.com/science/article/pii/S0968090X17301572
+
+
+file:///home/nozes/Desktop/Estudo%20de%20viabilidade%20para%20detec%C3%A7%C3%A3o%20de%20intrus%C3%A3o%20usando%20t%C3%A9cnicas%20de%20Big%20Data%20para%20a%20an%C3%A1lise%20de%20logs.html
+
+--- aqui tem as referencias para o meu artigo
+www.lume.ufrgs.br/handle/10183/139086
+
+
+
+
+
+
+
+
+
+
+
 GET envirocar_reduced_3/group/_search
 {
   "query": {
