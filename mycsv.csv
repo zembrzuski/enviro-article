@@ -1,0 +1,8 @@
+;duration;rpm;consumption;total_distance;speed;co2;linha_reta_distance
+duration;1;0.13;0.34;0.65;0.25;0.35;0.55
+rpm;0.12;1;0.63;0.44;0.84;0.62;0.46
+consumption;0.34;0.63;1;0.54;0.79;0.99;0.54
+total_distance;0.65;0.44;0.54;1;0.57;0.54;0.96
+speed;0.25;0.84;0.79;0.57;1;0.78;0.58
+co2;0.35;0.62;0.99;0.54;0.78;1;0.54
+linha_reta_distance;0.55;0.46;0.54;0.96;0.58;0.53;1
