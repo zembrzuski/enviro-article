@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.24)  26 JUN 2017 21:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.24)  8 JUL 2017 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,6 +437,10 @@ Missing character: There is no √ in font ptmri7t!
 Missing character: There is no ß in font ptmri7t!
 Missing character: There is no √ in font ptmri7t!
 Missing character: There is no £ in font ptmri7t!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 215.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 215.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -479,12 +483,12 @@ Missing character: There is no √ in font ptmr7t!
 Missing character: There is no ß in font ptmr7t!
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no µ in font ptmr7t!
-
-<figs/simple_histogram.png, id=90, 748.7975pt x 567.11874pt>
+ [2]
+<figs/simple_histogram.png, id=95, 748.7975pt x 567.11874pt>
 File: figs/simple_histogram.png Graphic file (type png)
 
 <use figs/simple_histogram.png>
-Package pdftex.def Info: figs/simple_histogram.png used on input line 308.
+Package pdftex.def Info: figs/simple_histogram.png used on input line 342.
 (pdftex.def)             Requested size: 249.48138pt x 188.94969pt.
 
 
@@ -494,25 +498,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.308 ...ngo do tempo.}{.99}{simple_histogram.png}
+l.342 ...ngo do tempo.}{.99}{simple_histogram.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 308--309
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 342--343
 []|  $[]$|   
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no ° in font ptmr7t!
-
-<figs/heatmap.png, id=95, 513.92pt x 400.49625pt>
+<figs/heatmap.png, id=96, 513.92pt x 400.49625pt>
 File: figs/heatmap.png Graphic file (type png)
  <use figs/heatmap.png>
-Package pdftex.def Info: figs/heatmap.png used on input line 332.
+Package pdftex.def Info: figs/heatmap.png used on input line 366.
 (pdftex.def)             Requested size: 249.48138pt x 194.42378pt.
 
 
@@ -522,25 +521,25 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.332 ...ntos do globo tamb√©m.}{.99}{heatmap.png}
+l.366 ...ntos do globo tamb√©m.}{.99}{heatmap.png}
                                                   
 ? 
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 332--333
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 366--367
 []|  $[]$|   
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6825) has occurred while \output is active []
 
 
-<figs/pizza_por_regiao.png, id=96, 783.92876pt x 552.0625pt>
+<figs/pizza_por_regiao.png, id=97, 783.92876pt x 552.0625pt>
 File: figs/pizza_por_regiao.png Graphic file (type png)
 
 <use figs/pizza_por_regiao.png>
-Package pdftex.def Info: figs/pizza_por_regiao.png used on input line 345.
+Package pdftex.def Info: figs/pizza_por_regiao.png used on input line 379.
 (pdftex.def)             Requested size: 249.48138pt x 175.68645pt.
 
 
@@ -550,20 +549,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 ... no grafico .}{.99}{pizza_por_regiao.png}
+l.379 ... no grafico .}{.99}{pizza_por_regiao.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 345--346
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 379--380
 []|  $[]$|   
  []
 
 [3 <./figs/simple_histogram.png> <./figs/heatmap.png> <./figs/pizza_por_regiao.
-png>] <figs/marcas_por_regiao.png, id=101, 402.50375pt x 562.1pt>
+png>] <figs/marcas_por_regiao.png, id=102, 402.50375pt x 562.1pt>
 File: figs/marcas_por_regiao.png Graphic file (type png)
 
 <use figs/marcas_por_regiao.png>
-Package pdftex.def Info: figs/marcas_por_regiao.png used on input line 365.
+Package pdftex.def Info: figs/marcas_por_regiao.png used on input line 399.
 (pdftex.def)             Requested size: 249.48138pt x 348.40405pt.
 
 
@@ -573,19 +572,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.365 ... plataforma.}{.99}{marcas_por_regiao.png}
+l.399 ... plataforma.}{.99}{marcas_por_regiao.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 365--366
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 399--400
 []|  $[]$|   
  []
 
-<figs/sunburst_marca_modelo.png, id=102, 404.51125pt x 423.5825pt>
+<figs/sunburst_marca_modelo.png, id=103, 404.51125pt x 423.5825pt>
 File: figs/sunburst_marca_modelo.png Graphic file (type png)
 
 <use figs/sunburst_marca_modelo.png>
-Package pdftex.def Info: figs/sunburst_marca_modelo.png used on input line 390.
+Package pdftex.def Info: figs/sunburst_marca_modelo.png used on input line 424.
 
 (pdftex.def)             Requested size: 249.48138pt x 261.2482pt.
 
@@ -596,19 +595,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.390 ... Brasil.}{.99}{sunburst_marca_modelo.png}
+l.424 ... Brasil.}{.99}{sunburst_marca_modelo.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 390--391
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 424--425
 []|  $[]$|   
  []
 
 [4 <./figs/marcas_por_regiao.png> <./figs/sunburst_marca_modelo.png>]
-<figs/radar.png, id=107, 691.58376pt x 516.93124pt>
+<figs/radar.png, id=108, 691.58376pt x 516.93124pt>
 File: figs/radar.png Graphic file (type png)
  <use figs/radar.png>
-Package pdftex.def Info: figs/radar.png used on input line 418.
+Package pdftex.def Info: figs/radar.png used on input line 452.
 (pdftex.def)             Requested size: 249.48138pt x 186.47371pt.
 
 
@@ -618,18 +617,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.418 ...ccionado por fabricante.}{.99}{radar.png}
+l.452 ...ccionado por fabricante.}{.99}{radar.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 418--419
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 452--453
 []|  $[]$|   
  []
 
-<figs/correlacao.png, id=108, 666.49pt x 576.1525pt>
+<figs/correlacao.png, id=109, 666.49pt x 576.1525pt>
 File: figs/correlacao.png Graphic file (type png)
  <use figs/correlacao.png>
-Package pdftex.def Info: figs/correlacao.png used on input line 438.
+Package pdftex.def Info: figs/correlacao.png used on input line 472.
 (pdftex.def)             Requested size: 249.48138pt x 215.66104pt.
 
 
@@ -639,11 +638,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.438 ...ado por fabricante.}{.99}{correlacao.png}
+l.472 ...ado por fabricante.}{.99}{correlacao.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 438--439
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 472--473
 []|  $[]$|   
  []
 
@@ -663,38 +662,38 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 572.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 606.
 [5 <./figs/radar.png> <./figs/correlacao.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 572.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 606.
  (./zen.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 572.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 572.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 606.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 606.
 Package rerunfilecheck Info: File `zen.out' has not changed.
-(rerunfilecheck)             Checksum: 5CD3EF86025138F02369A78F34A487EB;1112.
+(rerunfilecheck)             Checksum: ADCD06D6F589D59487F98C42E8BA4507;1122.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 572.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 606.
  ) 
 Here is how much of TeX's memory you used:
- 7309 strings out of 494953
- 112004 string characters out of 6180977
- 205664 words of memory out of 5000000
- 10504 multiletter control sequences out of 15000+600000
- 33036 words of font info for 62 fonts, out of 8000000 for 9000
+ 7330 strings out of 494953
+ 112203 string characters out of 6180977
+ 207732 words of memory out of 5000000
+ 10516 multiletter control sequences out of 15000+600000
+ 37690 words of font info for 71 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 43i,8n,40p,789b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,8n,40p,789b,421s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zen.pdf (5 pages, 361127 bytes).
+Output written on zen.pdf (5 pages, 362902 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
  180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

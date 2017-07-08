@@ -172,24 +172,58 @@ In order to produce this application, we start with this processing, followed by
 %==========================================
 \section{Caracterizacao dos dados}
 %
-Aqui sera listada, primeiramente, uma descricao sobre a estrutura dos dados apresentados no data set e
-sem seguida sera apresentado o problema e questoes que as visualizacoes pretendem responder.
 
-\subsection{Caracterização dos dados}
-Cada item do dataset eh composto por dois atributos: 'properties' e 'features'. 
+Os dados sao obtidos atraves de sensores comuns em diversos
+automoveis (OBD-II) e enriquecidos com informacoes de geolocalizacao
+que estao presentes em smartphones. Para preservar a identidade
+dos usuarios, suas informacoes pessoais nao sao disponibilizadas e tambem
+sao retiradas as informacoes dos primeiros e ultimos 200m de deslocamento,
+com objetivo que o usuario nao seja identificado atraves das informacoes
+de origem e de destino. 
+
+Uma vez que os automoveis estao em deslocamento, suas informacoes mudam
+rapidamente. Desse modo, informacoes populadas no dataset a cada 2 segundos.
+
+Os dados originais do servidor sao persistidos num banco de dados NoSQL -- 
+MongoDB -- e oferecidos abertos ao publico atraves de um RESTful web service.
+Os dados sao oferecidos em um formato JSON, que eh simples de entender e processar.
+
+Para realizacao desse trabalho, foram acessadas as apis rest e persistidas
+as informacoes de cada deslocamento no banco de dados ElasticSearch, por 
+motivos que serao esclarecidos em seguida. Entretanto os dados originais foram
+mantidos e enriquecidos com algumas outras informacoes para que ficassem 
+mais faceis de processa-los.
+
+
+
+\subsection{Caracterização dos dados originais}
+
+Cada item do dataset eh composto por dois atributos principais, que sao subdivididos
+em diversas partes e serao mais detalhados na sequencia: 'properties' e 'features'. 
 
 \begin{itemize}
 
   \item properties: possui as caracteristicas gerais do veiculo em questao. Esta subdividido
-  nos seguintes items:
-  \begin{itemize}
-    \item type -- atributo  categorico -- car or truck
-    \item constructionYear -- discreto 
-    \item model -- categorico
-    \item fuelType -- categorico
-    \item engineDisplacement -- discreto
-    \item manufacturer -- categorico
-  \end{itemize}    
+  nos itens apreseentados na tabela 1.
+  
+
+
+\begin{table}
+\caption{Properties: propriedades gerais de cada veiculo}
+\label{tab:perfs}
+\centering
+\begin{tabular}{l|c|l}
+\multicolumn{1}{l|}{\bf Variavel} &
+\multicolumn{1}{c|}{\bf Tipo da variavel} &
+\multicolumn{1}{l}{\bf Descricao}  \\ \hline
+type                & categorica       & tipo de veiculo    \\
+constructionYear    & discreta         & ano de construcao    \\
+model               & categorica       & modelo do veiculo    \\
+fuelType            & categorica       & tipo de combustivel    \\
+engineDisplacement  & discreta         & cilindrada do motor    \\
+manufactuerer       & categorica       & fabricante    
+\end{tabular}
+\end{table}
 
   \item features: possui as caracteristicas do deslocamento -- ou da 'viagem' em si. A viagem
   eh caracterizada pela composicao, a cada dois segundos, do seguinte conjunto de dados:
