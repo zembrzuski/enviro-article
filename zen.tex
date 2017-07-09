@@ -570,18 +570,46 @@ na Australia. Outras regioes sao sao insignificantes, que nem visualizamos no gr
 %------------------------------------------------------------------------- 
 \subsection{Graficos em pizza}
 
-Os graficos em pizza sao tao simples e interessantes, que resolvi fazer outro. Estava na duvida sobre quais
-sao as marcas de automovel mais utilizadas em diferentes partes do globo, que resolvi fazer um grafico de 
-pizza separado em linhas. Achei que a divisao por sunburst ficava um pouco complicada de visualizar; entao, fiz n graficos
-em pizza, em que cada grafico corresponde a uma regiao do globo e eh exibida a fatia de marcas por regiao.
+Observadas algumas questoes temporais e espaciais, irao ser analisados alguns padroes de comportamento
+em diferentes regioes do globo. Sera utilizado aquele cluster inferido do primeiro heatmap para
+fazer uma analise sobre quais sao os fabricantes mais utilizados em diferentes partes do globo.
 
-Pensei em fazer essa visualizacao para ver se eu conseguiria ver algum padrao de comportamento diferente
-dependendo da regiao. Por exemplo, se eh verdade que americanos gostam de carros maiores. Se londrinos andam de
-carros pequenos que nem o mr bean, ou se eh tudo uma bobagem.
+Sobre padroes de comportamento, espera-se verificar se supostos padroes culturais podem de uma determinada
+regiao do globo pode ser inferida atraves deste banco de dados. Por exemplo, eh verdade que americanos
+gostam de carros espacosos? Eh verdade que na Europa e Estados Unidos os carros sao muito melhores
+do que os da America do Sul?
 
-Baseado nessa amostra de dados, nao consegui chegar a uma conclusao definiva para isso. Alias, achei 
-parecida a distribuicao dos estados unidos com a da europa. Nas demais regioes, acredito que a amostra
-simplesmente seja insuficiente para se ter um grafico bacana.
+Para responder essa pergunta, algumas visualizacoes foram feitas algumas suposicoes de tecnicas
+de visualizacao: sunbsurst e nugget. 
+
+A tecnica de sunbsurst nao pareceu muito adequada devido a quantidade de informacoes -- muito grande para
+um espaco pequeno -- e o biscoito nao transpareceu de maneira clara o que estava sendo perguntado.
+
+Para isso, foi utilizada novamente a tecnica de visualizacao de graficos em pizza. Entretanto, agora,
+em vez de plotar somente um grafico, o foram plotados 5 graficos em pizza, em que cada pizza corresponde
+a uma regiao do cluster. Essa visualizacao foi escolhida em detrimento do sunburst pois a segmentacao
+trouxe mais evidencia para respoder aquilo que estava sendo perguntado. O sunburst trouxe muita informacao
+em muito pouco espaco fisico, o que pareceu meio confuso.
+
+Observando os fabricantes, vemos que as principais marcas na America do Norte, Australia e Europa
+sao as mesmas.
+
+America do Norte: Chevrolet, Toyota e Hiunday
+Australia: Ford, Toyota e Opel
+Europa: Toyota, Ford, Opel, VW, BMW
+
+Ja na America do Sul e India, parecem ser regioes mais humildes tambem, pois aqui nao observamos
+Hiunday e BMW.
+
+America do Sul: Ford
+India: Renault e VW
+
+Baseado nessa amostra de dados, nao se pode chegar a uma conclusao definiva para as
+questoes levantadas. A distribuicao entre Europa, Estados Unidos e Australia ficaram razoavelmente
+parecidas. Ja na America do Sul e India, realmente parecem regioes menos desenvolvidas. Entretanto,
+a amostra dos dados nao parece ser significativa o suficiente para uma conclusao assertiva. A observacao
+do grafico parece corrobarar a ideia inicial, utilizada para fazer as pergutnas, mas nao ha evidencias
+que, de fato, elas acontecem.
 
 \oneimage{ Estados Unidos e Europa apresentam resultados parecidos. America do Sul supoe que somente um cara utilizou a plataforma.}{.99}{marcas_por_regiao.png}
 
@@ -589,12 +617,17 @@ simplesmente seja insuficiente para se ter um grafico bacana.
 %------------------------------------------------------------------------- 
 \subsection{Sunburst}
 
-Uma das tecnicas legais vista em aula e que eu gostei muito foi o sunburst. Tambem vi que o kibana
-oferece uma forma bem simples de implementa-lo. Entao, tinha que achar uma forma legal de utiliza-lo.
+A Sunburst visualization is a radial space-filling visualization technique for displaying tree like structures. 
+There are other space-filling visualization methods that use other visual encodings for describing hierarchies.
 
-Pensei, entao, em fazer o sunburst para ver quais sao os modelos de automovel mais utilizados por marca.
-Como sao muitas marcas e modelos, achei prudente limitar a 5 o numero de marcas e em 3 o numero de modelos,
-para nao ficar um grafico muito sobrecarregado. 
+Essa tecnica mostra-se muito adequada para condensar informacoes hierarquicas, como para responder a pergunta:
+para cada fabricante, qual eh o modelo de automovel mais utilizado. 
+
+Como na Europa existe uma amostra muito mais significicativa do que em outras regioes do globo, a
+pergunta fica limitada a regiao da Europa. Alem disso, para que a visualizacao nao acontecesse de maneira
+muito confusa, para que ela ficasse clara, foram escolhidos os 5 fabricantes mais utilizados e os 5 modelos
+mais utilizados por cada fabricante. Se nao houvesse essa limitacao, o grafico ficaria muito poluido, o que
+gera um desconforto ao usuario.
 
 E achei que ficou um grafico aprazivel de se ver e bem informativo. Ali, podemos ver os 3 modelos mais
 comuns por fabricante. Vemos que marcas como VW, Ford, Opel (GM) e Toyota possuem praticamente a mesma
