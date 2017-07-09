@@ -413,6 +413,7 @@ inclusive, ja tomei notas.
   \item existe muita gente utilizando esse sistema hoje em dia?
   \item quais os modelos e fabricantes mais comuns?
   \item os modelos e fabricantes mais comum na Europa sao os mesmos do Brasil?
+  \item quais sao as marcas e modelos que mais poluem? quais sao as marcas e modelos que menos poluem?
   \item podemos descobrir quais sao as regioes mais poluidas e regioes menos poluidas?
   \item eh possivel utilizar este dataset para extrair padroes de comportamento de cada usuario?
 \end{itemize}
@@ -650,27 +651,50 @@ mais populares sao Transit, Fusion e Focus. Aqui, esses automoveis sao automovei
 %------------------------------------------------------------------------- 
 \subsection{Radar}
 
-Fiz um grafico de radar, primeiramente, porque achei que era um grafico que eu teria que colocar, devido
-ao fato de eu ter feito a cadeira de visualizacao de informacoes. Eu deveria, pois, colocar uns graficos
-avancados, em vez de colocar somente graficos simples e toscos. 
+Para que se possa identificar quais sao as marcas e modelos que mais poluem e que menos poluem
+de uma forma bastante rica, optou-se por fazer uma visualizacao em forma de radar. Dessa forma,
+foi possivel ver, para cada fabricante, uma serie de atributos que parecem ser correlacionados.
+Sao eles: rotacao do motor (rpm), consumo, velocidade, duracao da viagem, tempo de viagem e 
+quantidade de gas carbonico emitido. 
 
-Optei, entao, por fazer uma media dos principais atributos que pude encontrar: co2, rpm, consumo, speed, duration 
-e distance. Entao, calculei a media de cada um desses atributos selecionado por fabricante.
+Para que isso pudesse ser sintetizado adequadamente na forma de um radar, foram feitas uma serie
+de computacoes em cada um dos itens. Lembrando que diversos desses atributos mencionados, como
+co2, rpm, consumo e velocidade mudam periodicamente -- a cada dois segundos --, foi feita uma media
+para cada um desses atributos em cada viagem. Posteriormente, foi feita uma normalizacao desses dados,
+pois a ferramenta de visualizacao que o Kibana oferece nao permite que se coloque diferentes escalas
+em cada um dos eixos.
 
-Achei o resultado bastante curioso: Nele se pode observervar que Peugeot eh o carro que normalmente se anda com
-a rpm mais alta e eh o cara que tem maior consumo, mas nao eh o cara que anda mais rapido. 
+Computadas essas medias e normalizados os dados, podemos observar o grafico de radar. E ele nos leva
+a algumas informacoes bastante curiosas:
 
-O cara que anda mais rapido eh o Jeep, e ele consome menos que os Peugeot, normalmente.
+Peugeot eh o fabricante que normalmente se anda com a rpm mais alta e eh o cara que tem maior consumo, 
+mas nao eh o fabricante que anda mais rapido. 
+
+O fabricante que anda mais rapido eh o Jeep, e ele consome menos que os Peugeot, normalmente.
 
 Curioso observar tambem, que o Porshe eh a marca que se anda com rpm mais baixa -- ao contrario do que normalmente
-se imagina -- e cuja velocidade eh mais baixa tb. Acredito que isso se de porque o Porshe deve ter uma
-representatividade muito baixa na amostra. Mas o fato eh que os caras de porshe nao andam rapido.
+se imagina -- e cuja velocidade eh mais baixa tambem. Acredito que isso se de porque o Porshe deve ter uma
+representatividade muito baixa na amostra. Portanto, se voce quiser andar rapido, nao compre um Porshe!
 
-Uma coisa que achei bem interessante eh a chevrolet. Chevrolet parece ser um carro que polui pouco e que
-anda com a rpm nao muito alta.
-
+Para quem deseja comprar um automovel que consuma pouco e que ande com a rotacao do motor baixa, recomenda-se,
+de acordo com esse dataset, o uso de um Chevrolet.
 
 \oneimage{ Diversos atributos seccionado por fabricante.}{.99}{radar.png}
+
+
+O mesmo tipo de visualizacao pode ser aplicado, nao aos fabricantes, mas aos modelos dos automoveis em si.
+Na figura X, observam-se os modelos que menos poluem -- observe que dos 5 apresentados, 2 sao chevrolet, o
+que esta de acordo com o grafico de radar apresentado por fabricantes -- e observe que os que mais poluem
+sao modelos esportivos, cuja rotacao de motor normalmente eh alta.
+
+
+\oneimage{ Modelos que menos poluem.}{.99}{radar_modelos_ascending.png}
+
+\oneimage{ Modelos que mais poluem.}{.99}{radar_modelo_descending.png}
+
+
+
+
 
 
 
@@ -679,9 +703,17 @@ anda com a rpm nao muito alta.
 %------------------------------------------------------------------------- 
 \subsection{Matriz de correlacao}
 
-Aqui eu resolvi plotar, utilizando R, uma matriz de correlacao para que se possa ver
-como alguns dos principais atributos medidos pelos sensores se relacionam. Nessa
-representacao, quanto mais azul e quanto mais cheio esta o circulo superior, maior
+Como foi observado no grafico de radar que a rotacao do motor esta intimamente ligada
+ao consumo dos automoveis, decidi por fazer uma apresentacao de uma matriz de correlacao. 
+O intuito, com essa visualizacao eh verificar quais atributos estao mais ligados um ao
+outros. Por exemplo, para ter certeza de que, se o automovel esta com rotacao maior, que
+ele esta poluindo mais. Alem disso, para poder observar se faz sentido associar a 
+velocidade ah quantidade de emissao de poluentes.
+
+Nessa visualizacao, ao contrario das anteriores, foi utilizada linguagem R. Ela possui
+mais suporte a visualizacoes e trabalhos estatisticos do que o Kibana. 
+
+Nessa representacao, quanto mais azul e quanto mais cheio esta o circulo superior, maior
 eh a correlacao entre os atributos. Observamos que quanto maior o consumo de combustivel,
 maior eh a quantidade de gas carbonico emitido. Observamos tambem que existe grande
 correlacao entre rpm e velocidade, o que me surpreendeu um pouco, ate. Outra coisa
@@ -697,11 +729,29 @@ outras coisas que se pode observar por ai tb.
 %==========================================
 \section{Resultados}
 %
-Achei interessante que na Europa, a Toyota aparece como uma marca comum. BMW segue sendo top por la.
-Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. 
-Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. 
-Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. 
 
+As visualizacoes deram uma visao geral sobre a base de dados, e praticamente todas
+as perguntas que puderam ser respondidas. 
+
+\begin{itemize}
+  
+  \item observamos que, de fato, a maioria dos usuarios esta na Europa. Alem disso, observamos
+    que por um curto periodo de tempo, houve muita gente utilizando a plataforma, mas que essa
+    quantidade de gente a utilizando nao se sustentou por muito tempo.
+
+  \item pode-se observar alguns padroes de comportamento utilizando esse dataset: na Europa, os
+    fabricantes mais comuns sao praticamente mesmos fabricantes do Brasil. Entretanto, os carros
+    comercializados por esses fabricantes por la sao superiores aos brasileiros.
+
+  \item observamos de maneira clara, atraves da visualizacao de radar, quais sao as marcas
+  e fabricantes cujos veiculos poluem mais e quais poluem menos. Vimos, nesse mesmo grafico de radar,  
+  quais sao os que gastam mais e os que gastam menos combustivel.
+
+  \item observamos ainda que esse dataset, embora nao seja tao rico quanto se supunha no inicio,
+    ainda assim ele pode ser utilizado para se detectar padroes de comportamento individuais 
+    nas pilotagens.
+
+\end{itemize}
 
 
 
@@ -798,15 +848,45 @@ Fazer mais resultados. Fazer mais resultados. Fazer mais resultados. Fazer mais 
 %==========================================
 \section{Conclusao}
 %
-Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao. Aqui vai minha conclusao.
+
+Foi atingido objetivo de se fazer uma exploracao basica na base de dados oferecida pelo envirocar. Obteve-se 
+intuicao sobre essa base de dados e padroes de comportamento dos motoristas de automovel. 
+
+Padroes culturais,
+como o tipo de veiculos e fabricantes utilizados na Europa em comparacao com o Brasil foram identificados. 
+Alem disso, padroes individuais de pilotagem de automoveis foram identificados. 
+
+Alem disso, foi observadas as distribuicoes temporais e espaciais dos registros de veiculos.
+
+A base de dados nao eh tao utilizada quanto se supunha -- o autor imaginava que mais gente utilizasse a
+plataforma --, mas possui-se uma amostra significativa de pessoas para que se possa levar o trabalho
+mais adiante e utilizar essa base para treinar algum modelo de machine learning em trabalhos futuros.
+
+Alem disso, pode-se fazer uma analise basica sobre o uso de ferramentas como Kibana e como R para
+visualizacao de informacoes. O Kibana, mais simples, apresenta graficos mais bonitos. O R, entretanto,
+apresenta graficos mais cruz e uma linguagem de baixo nivel. O R, portanto, vai ser mais aproveitado
+por usuarios mais experientes -- como programadores --, enquanto o Kibana pode ser utilizado por usuarios
+mais leigos.
+
 
 
 %==========================================
 \iffinal
 % use section* for acknowledgement
-\section*{Acknowledgment}
+\section*{References}
 %
-The authors would like to thank this colleague and this financing institute.
+
+\begin{itemize}
+  \item xxxx
+  \item xxxx
+  \item xxxx
+  \item xxxx
+  \item xxxx
+  \item xxxx
+  \item xxxx
+  \item xxxx
+\end{itemize}
+
 \fi
 
 

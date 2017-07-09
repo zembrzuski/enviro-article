@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.24)  9 JUL 2017 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.24)  9 JUL 2017 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -517,7 +517,7 @@ Missing character: There is no ß in font ptmr7t!
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no µ in font ptmr7t!
 
-Underfull \hbox (badness 1412) in paragraph at lines 496--498
+Underfull \hbox (badness 1412) in paragraph at lines 497--499
 []\OT1/ptm/m/n/10 Nao se pode ob-ser-var, por-tanto, um uso mas-sivo da
  []
 
@@ -525,7 +525,7 @@ Underfull \hbox (badness 1412) in paragraph at lines 496--498
 File: figs/simple_histogram.png Graphic file (type png)
 
 <use figs/simple_histogram.png>
-Package pdftex.def Info: figs/simple_histogram.png used on input line 499.
+Package pdftex.def Info: figs/simple_histogram.png used on input line 500.
 (pdftex.def)             Requested size: 249.48138pt x 188.94969pt.
 
 
@@ -535,22 +535,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.499 ...go dos meses.}{.99}{simple_histogram.png}
+l.500 ...go dos meses.}{.99}{simple_histogram.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 499--500
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 500--501
 []|  $[]$|   
  []
 
 
-Underfull \vbox (badness 5622) has occurred while \output is active []
+Underfull \vbox (badness 1297) has occurred while \output is active []
 
  [3]
 <figs/heatmap.png, id=205, 513.92pt x 400.49625pt>
 File: figs/heatmap.png Graphic file (type png)
  <use figs/heatmap.png>
-Package pdftex.def Info: figs/heatmap.png used on input line 530.
+Package pdftex.def Info: figs/heatmap.png used on input line 531.
 (pdftex.def)             Requested size: 249.48138pt x 194.42378pt.
 
 
@@ -560,13 +560,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.530 ...ntos do globo tamb√©m.}{.99}{heatmap.png}
+l.531 ...ntos do globo tamb√©m.}{.99}{heatmap.png}
                                                   
 ? 
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 530--531
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 531--532
 []|  $[]$|   
  []
 
@@ -578,7 +578,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figs/pizza_por_regiao.png Graphic file (type png)
 
 <use figs/pizza_por_regiao.png>
-Package pdftex.def Info: figs/pizza_por_regiao.png used on input line 566.
+Package pdftex.def Info: figs/pizza_por_regiao.png used on input line 567.
 (pdftex.def)             Requested size: 249.48138pt x 175.68645pt.
 
 
@@ -588,11 +588,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.566 ... no grafico .}{.99}{pizza_por_regiao.png}
+l.567 ... no grafico .}{.99}{pizza_por_regiao.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 566--567
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 567--568
 []|  $[]$|   
  []
 
@@ -604,7 +604,7 @@ Underfull \vbox (badness 1152) has occurred while \output is active []
 File: figs/marcas_por_regiao.png Graphic file (type png)
 
 <use figs/marcas_por_regiao.png>
-Package pdftex.def Info: figs/marcas_por_regiao.png used on input line 618.
+Package pdftex.def Info: figs/marcas_por_regiao.png used on input line 619.
 (pdftex.def)             Requested size: 249.48138pt x 348.40405pt.
 
 
@@ -614,11 +614,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.618 ... plataforma.}{.99}{marcas_por_regiao.png}
+l.619 ... plataforma.}{.99}{marcas_por_regiao.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 618--619
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 619--620
 []|  $[]$|   
  []
 
@@ -627,7 +627,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 618--619
 File: figs/sunburst_marca_modelo.png Graphic file (type png)
 
 <use figs/sunburst_marca_modelo.png>
-Package pdftex.def Info: figs/sunburst_marca_modelo.png used on input line 645.
+Package pdftex.def Info: figs/sunburst_marca_modelo.png used on input line 646.
 
 (pdftex.def)             Requested size: 249.48138pt x 261.2482pt.
 
@@ -638,18 +638,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.645 ... Brasil.}{.99}{sunburst_marca_modelo.png}
+l.646 ... Brasil.}{.99}{sunburst_marca_modelo.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 645--646
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 646--647
 []|  $[]$|   
  []
 
 <figs/radar.png, id=217, 691.58376pt x 516.93124pt>
 File: figs/radar.png Graphic file (type png)
  <use figs/radar.png>
-Package pdftex.def Info: figs/radar.png used on input line 673.
+Package pdftex.def Info: figs/radar.png used on input line 682.
 (pdftex.def)             Requested size: 249.48138pt x 186.47371pt.
 
 
@@ -659,18 +659,68 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.673 ...ccionado por fabricante.}{.99}{radar.png}
+l.682 ...ccionado por fabricante.}{.99}{radar.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 673--674
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 682--683
 []|  $[]$|   
  []
 
-<figs/correlacao.png, id=218, 666.49pt x 576.1525pt>
+<figs/radar_modelos_ascending.png, id=218, 660.4675pt x 498.86375pt>
+File: figs/radar_modelos_ascending.png Graphic file (type png)
+
+<use figs/radar_modelos_ascending.png>
+Package pdftex.def Info: figs/radar_modelos_ascending.png used on input line 69
+1.
+(pdftex.def)             Requested size: 249.48138pt x 188.436pt.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.691 ...oluem.}{.99}{radar_modelos_ascending.png}
+                                                  
+? 
+
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 691--692
+[]|  $[]$|   
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./figs/sunburst_marca_modelo.png> <./figs/radar.png>]
+<figs/radar_modelo_descending.png, id=223, 663.47874pt x 476.78125pt>
+File: figs/radar_modelo_descending.png Graphic file (type png)
+
+<use figs/radar_modelo_descending.png>
+Package pdftex.def Info: figs/radar_modelo_descending.png used on input line 69
+3.
+(pdftex.def)             Requested size: 249.48138pt x 179.27995pt.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.693 ...oluem.}{.99}{radar_modelo_descending.png}
+                                                  
+? 
+
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 693--694
+[]|  $[]$|   
+ []
+
+<figs/correlacao.png, id=224, 666.49pt x 576.1525pt>
 File: figs/correlacao.png Graphic file (type png)
  <use figs/correlacao.png>
-Package pdftex.def Info: figs/correlacao.png used on input line 693.
+Package pdftex.def Info: figs/correlacao.png used on input line 725.
 (pdftex.def)             Requested size: 249.48138pt x 215.66104pt.
 
 
@@ -680,18 +730,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.693 ...ado por fabricante.}{.99}{correlacao.png}
+l.725 ...ado por fabricante.}{.99}{correlacao.png}
                                                   
 ? 
 
-Overfull \hbox (12.0813pt too wide) in paragraph at lines 693--694
+Overfull \hbox (12.0813pt too wide) in paragraph at lines 725--726
 []|  $[]$|   
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./figs/sunburst_marca_modelo.png> <./figs/radar.png>]
+[7 <./figs/radar_modelos_ascending.png> <./figs/radar_modelo_descending.png> <.
+/figs/correlacao.png>]
 No file zen.bbl.
 
 ** Conference Paper **
@@ -704,14 +752,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 827.
-[7
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 907.
+[8
 
- <./figs/correlacao.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 827.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 907.
  (./zen.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 827.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 827.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 907.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 907.
 Package rerunfilecheck Info: File `zen.out' has not changed.
 (rerunfilecheck)             Checksum: 75CB5643CBF2ADD7B83EF1BE25F33756;1118.
 
@@ -721,16 +769,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 827.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 907.
  ) 
 Here is how much of TeX's memory you used:
- 8952 strings out of 494953
- 135359 string characters out of 6180977
+ 8965 strings out of 494953
+ 135779 string characters out of 6180977
  301660 words of memory out of 5000000
- 12008 multiletter control sequences out of 15000+600000
+ 12018 multiletter control sequences out of 15000+600000
  38205 words of font info for 73 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 43i,9n,40p,789b,1957s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,9n,40p,432b,1957s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
@@ -738,10 +786,10 @@ fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zen.pdf (7 pages, 386040 bytes).
+Output written on zen.pdf (8 pages, 449235 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 132 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
+ 133 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
