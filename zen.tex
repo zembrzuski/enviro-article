@@ -14,6 +14,31 @@
 \usepackage{hyperref}
 
 
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Perl,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
@@ -190,13 +215,11 @@ Os dados sao oferecidos em um formato JSON, que eh simples de entender e process
 
 Para realizacao desse trabalho, foram acessadas as apis rest e persistidas
 as informacoes de cada deslocamento no banco de dados ElasticSearch, por 
-motivos que serao esclarecidos em seguida. Entretanto os dados originais foram
-mantidos e enriquecidos com algumas outras informacoes para que ficassem 
-mais faceis de processa-los.
+motivos que serao esclarecidos em seguida. 
 
 
 
-\subsection{Caracterização dos dados originais}
+\subsection{Caracterização geral dos dados}
 
 Cada item do dataset eh composto por dois atributos principais, que sao subdivididos
 em diversas partes e serao mais detalhados na sequencia: 'properties' e 'features'. 
@@ -204,48 +227,173 @@ em diversas partes e serao mais detalhados na sequencia: 'properties' e 'feature
 \begin{itemize}
 
   \item properties: possui as caracteristicas gerais do veiculo em questao. Esta subdividido
-  nos itens apreseentados na tabela 1.
-  
+  nos itens apresentados na tabela 1. Veja um exemplo de propriedades extraido do banco de dados.
+
+
+\begin{lstlisting}
+"properties": {
+  "sensor": {
+    "type": "car",
+    "properties": {
+      "constructionYear": 2011,
+      "model": "Avensis",
+      "fuelType": "gasoline",
+      "id": "574e78cbe4b09078f97bbb4a",
+      "engineDisplacement": 1800,
+      "manufacturer": "Toyota"
+    }
+}
+\end{lstlisting}
+
 
 
 \begin{table}
 \caption{Properties: propriedades gerais de cada veiculo}
 \label{tab:perfs}
 \centering
-\begin{tabular}{l|c|l}
+\begin{tabular}{l|c}
 \multicolumn{1}{l|}{\bf Variavel} &
-\multicolumn{1}{c|}{\bf Tipo da variavel} &
 \multicolumn{1}{l}{\bf Descricao}  \\ \hline
-type                & categorica       & tipo de veiculo    \\
-constructionYear    & discreta         & ano de construcao    \\
-model               & categorica       & modelo do veiculo    \\
-fuelType            & categorica       & tipo de combustivel    \\
-engineDisplacement  & discreta         & cilindrada do motor    \\
-manufactuerer       & categorica       & fabricante    
+type                & categorica       \\
+constructionYear    & discreta           \\
+model               & categorica         \\
+fuelType            & categorica           \\
+engineDisplacement  & discreta             \\
+manufactuerer       & categorica       
 \end{tabular}
 \end{table}
 
   \item features: possui as caracteristicas do deslocamento -- ou da 'viagem' em si. A viagem
   eh caracterizada pela composicao, a cada dois segundos, do seguinte conjunto de dados:
-  \begin{itemize}
-    \item coordinates -- geoespacial -- lat/long
-    \item speed -- continuo -- km/h
-    \item rpm -- continuo -- u/min
-    \item gps accuracy -- nao sei -- nao sei
-    \item maf -- nao sei -- nao sei
-    \item engine load -- nao sei -- nao sei
-    \item gps pdop -- nao sei -- nao sei
-    \item o2 lambda voltage -- nao sei -- nao sei
-    \item throttle position -- nao sei -- nao sei
-    \item consumption -- continuo -- l/h
-    \item gps vdop -- nao sei -- nao sei
-    \item gps speed -- continuo -- km/h
-    \item gps bearing -- nao sei -- nao sei
-    \item intake pressure -- nao sei -- nao sei
-    \item co2 -- atributo continuo -- kg/h
-    \item time -- atributo temporal -- timestamp
 
-  \end{itemize}    
+
+
+\begin{table}
+\caption{Features: informacoes de cada timestamp do deslocamento}
+\label{tab:perfs}
+\centering
+\begin{tabular}{l|c}
+\multicolumn{1}{l|}{\bf Variavel} &
+\multicolumn{1}{l}{\bf Unidade de medida}  \\ \hline
+coordinates        & geoespacial       \\
+speed              & continuo         \\
+rpm                & continuo       \\
+gps accuracy       & continuo       \\
+maf                & continuo         \\
+engine load        & continuo       \\
+gps pdop           & continuo       \\
+o2 lambda voltage  & continuo       \\
+throttle position  & continuo       \\
+consumption        & continuo       \\
+gps vdop           & continuo       \\
+gps speed          & continuo       \\
+gps bearing        & continuo       \\
+intake pressure    & continuo       \\
+co2                & continuo       \\
+time               & temporal       \\
+
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+\begin{lstlisting}
+{
+        "geometry": {
+          "coordinates": [
+            6.443663779195363,
+            51.20348336793408
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "phenomenons": {
+            "Speed": {
+              "value": 34.647194623947144,
+              "unit": "km/h"
+            },
+            "Rpm": {
+              "value": 1584.3050694465637,
+              "unit": "u/min"
+            },
+            "GPS Accuracy": {
+              "value": 2.999999910593033,
+              "unit": "%"
+            },
+            "MAF": {
+              "value": 9.437765815629945,
+              "unit": "l/s"
+            },
+            "Engine Load": {
+              "value": 43.96216858346017,
+              "unit": "%"
+            },
+            "GPS PDOP": {
+              "value": 1.4999999776482582,
+              "unit": "precision"
+            },
+            "O2 Lambda Voltage": {
+              "value": 3.2762881521175586,
+              "unit": "V"
+            },
+            "Throttle Position": {
+              "value": 21,
+              "unit": "%"
+            },
+            "Consumption": {
+              "value": 3.102402130874109,
+              "unit": "l/h"
+            },
+            "GPS VDOP": {
+              "value": 1.1779116287827491,
+              "unit": "precision"
+            },
+            "GPS Speed": {
+              "value": 33.47147411240462,
+              "unit": "km/h"
+            },
+            "GPS HDOP": {
+              "value": 0.899999986588955,
+              "unit": "precision"
+            },
+            "Intake Pressure": {
+              "value": 44.14216932654381,
+              "unit": "kPa"
+            },
+            "GPS Bearing": {
+              "value": 304.7174273121018,
+              "unit": "deg"
+            },
+            "Intake Temperature": {
+              "value": 13.000000387430191,
+              "unit": "c"
+            },
+            "CO2": {
+              "value": 7.290645007554156,
+              "unit": "kg/h"
+            },
+            "O2 Lambda Voltage ER": {
+              "value": 0.9988191702782387,
+              "unit": "ratio"
+            },
+            "GPS Altitude": {
+              "value": 104.90115790988267,
+              "unit": "m"
+            }
+          },
+          "id": "590ad752268d1b08a47f18d4",
+          "time": "2017-03-27T04:51:05Z"
+        }
+      }
+\end{lstlisting}
+
+
 
 \end{itemize}
 
@@ -266,6 +414,7 @@ inclusive, ja tomei notas.
   \item quais os modelos e fabricantes mais comuns?
   \item os modelos e fabricantes mais comum na Europa sao os mesmos do Brasil?
   \item podemos descobrir quais sao as regioes mais poluidas e regioes menos poluidas?
+  \item eh possivel utilizar este dataset para extrair padroes de comportamento de cada usuario?
 \end{itemize}
 
 
@@ -303,64 +452,79 @@ um jeito de explicar muito bem, porque ficou uma bosta, no fim das contas.
 %
 A exploracao dos dados foi feito com com o uso de duas ferramentas: Kibana e R.
 
-Kibana, tipicamente, eh utilizada para analise por inspeção manual e visualização 
-de informações presentes no
-ElasticSearch (MARINO,  2015;  VAARANDI;  PIHELGAS,  2014).   Dessa  forma,  eh  ela  que
-ira apresentar os dados armazenados pelo Logstash no ElasticSearch, em uma interface,  via
-browser, altamente customizável com histogramas e outros painéis que propiciam uma visão
+
+Kibana eh uma ferramenta utilizada para nalise por inspecao manual e visualizacao
+de informacoes que funciona de maneira natural com o ElasticSearch. Dessa  forma, 
+eh  ela  que ira apresentar os dados armazenados no ElasticSearch, em uma interface,  via
+browser, altamente customizável com histogramas, mapas e outros painéis que propiciam uma visão
 geral sobre os dados.  O Kibana possibilita transformar os logs em informações úteis (valor)
 através  de Dashboards,  pois  permite  realizar  correlação  de  eventos,  filtrar logs
 por  origem, hospedeiros, entre outras combinações (VAARANDI; NIZINSKI, 2013).
 
-R eh uma linguagem muito utilizada para analises estatisticas e tambem possue uma gama
-vasta para visualizacao de dados. Foi utilizada para produzir graficos menos interessantes
-ao olho; mais toscas em questoes de boniteza, mas com uma representatividade muito boa.
-Na verdade, tenho que escrever um texto legal aqui sobre como o R eh legal para visualizacao
-de dados. Ah, o que eu tenho que falar eh que usei o R quando eu achei que o Kibana era 
-insuficiente para fazer uma analise mais profunda. Acho que posso concluir, la no final,
-que o R tem muito mais flexibilidade, maleabilidade e estensibilidade que o Kibana, porque
-nao consegui fazer matriz de correlacoes nem boxplots com o Kibana.
+Foi utilizado o ElasticSearch como base primaria dos dados, pois alem do suporte a persistencia,
+vem junto com uma serie de mecanismos e algoritmos de recuperacao de informacao. A ferramenta
+permite combinar geolocalizacao com full-text search, structured text, and analytics.
 
-A maior vantagem do kibana sobre o R eh que ele casa muito bem com o elasticsearch. Mas
-eu ja sei tanto de elasticsearch que nao me importo com isso.
+Outras ferramenta para visualizacao de informacoes utilizada foi a linguagem R. A linguagem
+tambem possui uma variada gama de tecnicas para visualizacao de dados, alem de possuir um
+suporte muito grande a questoes de estatistica e de probabilidade. 
 
+O R nao eh uma ferramenta de tao alto nivel de abstracao quanto o kibana em que, uma vez
+que os dados estao persistidos, se montam visualizacoes com alguns cliques. Aqui, eh necessario
+que se escreva codigo para que as visualizacoes aparecam. Os graficos nao aparecem de uma
+forma tao elegante quanto o elasticsearch, mas possui muito mais flexibilidade, maleabilidade
+e estensibilidade que o kibana. Alem disso, existe um conjunto muito mais vasto de visualizacoes
+que o kibana, como boxplots e matrizes de correlacoes.
+
+Dessa maneira, a combinacao de ferramentas se fez necessaria, para atingir requisitos um pouco
+diferentes. Essa combinacao trara uma experiencia legal para o usuario.
 
 %------------------------------------------------------------------------- 
 \subsection{Histograma}
-Com o intuito de saber se muita gente ou se pouca gente utiliza a plataforma envirocar,
-foi plotado um histograma. Com ele, alem de saber se muita gente ou se pouca gente o utiliza,
-podemos ver a evolucao de sua utilizacao ao longo do tempo.
 
-Observando o grafico abaixo, eu vejo uma coisa meio ruim em relacao a ferramenta. Ela foi 
-muito utilizada no final de 2006, chegando a 3600 viagens no periodo de um mes, mas foi
-somente naquele periodo. Em novembro de 2006, ja passou a acontecer muito poucas viagens 
-de automovel, e em 2017 temos cerca de 100 viagens por mes. 
+Com o intuito de saber se muita gente utiliza a plataforma envirocar, foi desenvolvido
+um histograma em que o eixo x corresponde a variavel temporal e o eixo y corresponde
+a quantidade de viagens naquele periodo de tempo. Com isso, podera ser inferido se bastante
+gente vem utilizando a ferramenta e, principalmente, se se uso vem crescendo ou decrescendo
+com o passar do tempo. Eh um estudo de tendencias, portanto.
 
-Nao eh muito mas, ainda, acredito que possa ser utilizada com o proposito que eu quero, que eh
-de tentar agrupar os motoristas e identificar seus padores de comportamento.
+Pode-se observar o grafico abaixo, que nao existe uma tendencia de aumento ou de diminuicao
+ao longo do tempo. O que se observa eh um 'boom' de uso no periodo em volta do ano de 2016,
+mas que nao se mantem no restante do tempo. No periodo de novembro de 2016, por exemplo, 
+tivemos 3600 viagens naquele mes. Mas no inicio de 2017, nao passavam de 100 viagens por mes.
 
-\oneimage{ No eixo x, observamos a quantidade de uso da plataforma ao longo do tempo.}{.99}{simple_histogram.png}
+Nao se pode observar, portanto, um uso massivo da plataforma. Entretanto, temos uma amostra
+que parece razoavel para que se possa tentar responder as outras perguntas do artigo.
+
+\oneimage{ No eixo x, observamos a quantidade de uso da plataforma ao longo dos meses.}{.99}{simple_histogram.png}
 
 
 %------------------------------------------------------------------------- 
 \subsection{Heatmaps}
 
-Outra duvida que eu tinha no inicio era a distribuicao geografica das pessoas que utilizam a plataforma. 
-Como a plataforma foi desenvolvida na Alemanha, supus que a maioria das pessoas estavam utilizando por lá. 
-Estava realmente curioso para saber se existem pessoas em outros lugares do mundo a utilizando tambem. 
-Para isso, um heatmap veio a calhar. 
+Uma vez visualizada a distribuicao temporal da utilizacao da plataforma, ira ser observada a
+distribuicao geografica dos usuarios. Como ja se sabe que eh uma plataforma desenvolvida
+na Alemanha, pode-se supor que muita gente na Europa ira utilizar a ferramenta, em relacao
+as outras regioes do globo.
 
-Como se pode observar no grafico de heatmaps, eu estava supondo corretamente. A maioria das pessoas
-que utilizam essa plataforma se encontra na Europa. Entretando, se observa algumas coisas nao imaginadas
-observando esse grafico. Observa-se pontos isolados nos Estados Unidos, Brasil, India e Australia.
+A visualizacao por calor, utilizando como metrica a quantidade de viagens dispostas no globo
+terrestre, dara um senso de quais regioes sao mais utilizadas a ferramenta.
 
-Essa visualizacao eh bem importante pois, para algumas outras visualizacoes que vamos ver a seguir, 
-foi assim que eu dividi o globo. Em 5 regioes -- ou serao 6 -- bem definidas, baseados a partir desse
-heatmap.
+Observando o grafico a seguir, observamos aquilo que ja era suposto de antemao: de fato,
+na Europa, a plataforma eh mais utilizada. Alem disso, conseguimos obter alguns dados que nao
+eram imaginados. Vemos pontos isolados de uso nos Estados Unidos, Brasil, India e Australia.
 
-Outra coisa legal de notar eh que o heatmap deixou claro na nossa mente os pontos do globo em que 
-mais se usa essa base de dados, mas nao deixou muito clara a proporcao de pessoas que a utilziam
-nas diferentes partes do globo.
+Com as informacoes geoespaciais, ganha-se confianca de que poderao ser respondidas outras questoes,
+como o comportamento dos motoristas em diferentes regioes do globo. Alem disso, pode-se utilizar
+esse grafico para clusterizar de maneira macro o globo terrestre de acordo com essa base de 
+dados: America do Norte, America do Sul, Europa, India e Australia.
+
+A visualizacao de heatmat traz uma ideia muito clara sobre os pontos que mais utilizam a 
+ferramenta. Traz-nos a ideia de que em diversos pontos do globo ela esta sendo utilizada, com
+enfase na Europa. Traz confianca de que poderemos observar padroes de comportamento em diversos
+pontos do globo. Ela traz uma ideia basica, mas nao definitiva, da quantidade de pessoas
+que utiliza a ferramenta ao longo do globo.
+
 
 \oneimage{ Aqui, podemos observar que a maioria dos usuarios, de fato, se encontra,
 na Europa. Contudo, existem pessoas utilizando em diversos outros pontos do globo também.}{.99}{heatmap.png}
@@ -369,11 +533,34 @@ na Europa. Contudo, existem pessoas utilizando em diversos outros pontos do glob
 %------------------------------------------------------------------------- 
 \subsection{Grafico em pizza}
 
-Dada minha duvida sobre as proporcoes das pessoas que utilizam o envirocar em diferentes partes do globo,
-acreditei que um siples grafico de pizza iria mostrar claramente as proporcoes. Para isso, dividi
-baseado no heatmap o globo nas 6 regioes que la apareceram: America do Norte, America do Sul,
-Australia, Europa, India. Com isso, criei um grafico de pizza, que mostra que, de fato, a maioria esmagadora
-das pessoas esta na Europa. Existe alguma representatividade tambem na America do Norte e na Australia.
+O heatmap deu uma ideia basica sobre a quantidade de pessoas que utilizam a plataforma ao redor
+do globo. Entretanto, nao trouxe uma idea definitiva sobre as proporcoes de cada regiao.
+
+Para isso, sera utilizado um grafico em pizza, que traz claramente a ideia de proporcoes ao
+usuario, ao dispor em fatias cada segmento analizado.
+
+Nesse grafico, sera utilizado o cluster inferido visualmente do heatmatp com as seguintes
+regioes: Europa, America do Norte, America do Sul, India e Australia.
+
+Aqui, pode-se observar a imensa maioria, de fato, utilizando na Europa: 97\% dos usuarios
+esta la. Temos alguma representatividade, com 1\% dos Usuarios na America do Norte e 1\% 
+na Australia.
+
+Na America do Sul e na India, nao chega a 1\% de usuarios. Parece ter sido realmente um usuario
+curioso que comecou a utilizar a plataforma em sua terra natal.
+
+Essa informacao podera ser utilizada de uma maneira que achei incrivel: para comparacao de
+dados globais, como estatisticas e tentativas de detecao de comportamento em massa, devera
+ser dado foco nos usuarios da Europa.
+
+Entretanto, essa falta de representatividade em outras partes do globo podera favorecer um
+olhar mais individualista. Por exemplo, pode-se acreditar que na America do Sul e na India,
+eh sempre a mesma pessoa que utiliza a ferramenta. Desse modo, poderemos observar algum
+comportamento individual. Do mesmo modo pode ser feito na America do Norte e na Australia,
+com um pouco mais de criterio, pois la houve muito mais uso.
+
+Entretanto, na Europa, nao podemos fazer isso, pois eh muita gente usando. Na Europa, serao
+feitas analises mais genericas.
 
 \oneimage{ 98\% dos deslocamentos esta na Europa. 1\% esta na America do Norte e 1\% esta
 na Australia. Outras regioes sao sao insignificantes, que nem visualizamos no grafico .}{.99}{pizza_por_regiao.png}
