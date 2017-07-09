@@ -113,9 +113,11 @@ Sao dados de sensores implantados dentro dos veiculos que trazem informacoes
 precisas sobre navegacao dos carros e dados relativos a conservacao do meio-ambiente, 
 como emissao de gas-carbonico e consumo do veiculo. 
 
-Esse artigo tem por objetivo apresentar uma serie de 
-visualizacoes para analise exploratoria desse banco de dados. Com isso, teremos
-uma intuicao sobre se esse banco de dados pode servir para alguma coisa, ou nao.
+Esse artigo tem por objetivo caracterizar os dados e apresentar uma serie de 
+visualizacoes para analise exploratoria desse banco de dados. Com isso, sera
+obtida uma intuicao sobre o tipo de dados apresentado. Alem disso, serao obtidas
+informacoes acuradas sobre a viabilidade do uso desse banco de dados para modelagem
+de algoritmos de aprendizado de maquina.
 
 % DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
 %
@@ -146,7 +148,7 @@ de trafego [ref].
 A plataforma une dados gerados por sensores comuns,
 que vem na maioria dos automoveis atuais com sensores de 
 geolocalizacao, presente na maioria dos smartphones. Com isso,
-cria-se uma base de dados relevante para se medir o fluxo de automoveis
+cria-se uma base de dados supostamente relevante para se medir o fluxo de automoveis
 nas avenidas e quantidade de emissao de poluentes nas cidades. 
 
 %------------------------------------------------------------------------- 
@@ -690,7 +692,7 @@ sao modelos esportivos, cuja rotacao de motor normalmente eh alta.
 
 \oneimage{ Modelos que menos poluem.}{.99}{radar_modelos_ascending.png}
 
-\oneimage{ Modelos que mais poluem.}{.99}{radar_modelo_descending.png}
+\oneimage{ Modelos que mais poluem.}{.99}{radar_modelo_descendin.png}
 
 
 
@@ -723,6 +725,32 @@ faco viagens mais longas. Mas acho que na Europa nao eh assim que acontece. Exis
 outras coisas que se pode observar por ai tb.
 
 \oneimage{ Diversos atributos seccionado por fabricante.}{.99}{correlacao.png}
+
+
+%------------------------------------------------------------------------- 
+\subsection{Mais um heatmap}
+
+Com intuito de fazer uma analise micro, isto eh, em vez de analizar uma populacao inteira
+em determinada regiao, decidi por fazer umas visualizacoes micro. Isto eh, para cara conjunto
+de viagens que eu tenho razoes suficientes para crer que sejam da mesma pessoa, fiz um
+heatmap das viagens que ela faz. 
+
+Com isso, observamos que em muitos casos, as pessoas realmente costumam fazer o mesmo deslocamento
+periodicamente. Observe as figuras X e Y, em que os pontos muito escuros indicam que o usuario
+fez aquele caminho muitas vezes. 
+
+Com isso, observamos que esse dataset pode ser utilizado, sim, para treinar algum algoritmo
+que seja capaz de predizer, para um determinado usuario, onde ele estara em determinado periodo 
+de tempo.
+
+Alem disso, pode-se fazer uma analise em real time para saber o quao longe o usuario esta dos
+lugares que ele costuma ir.
+
+\oneimage{ aaa.}{.99}{smooth_americano_se_repete_muito.png}
+
+\oneimage{ bbb.}{.99}{smooth_australiano_nao_se_repete.png}
+
+\oneimage{ ccc.}{.99}{smooth_brasileiro.png}
 
 
 
