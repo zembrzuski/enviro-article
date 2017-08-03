@@ -1,11 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Motivacao}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Objetivos}{section.1}% 3
-\BOOKMARK [1][-]{section.2}{Caracterizacao dos dados}{}% 4
-\BOOKMARK [2][-]{subsection.2.1}{Caracterização geral dos dados}{section.2}% 5
+\BOOKMARK [1][-]{section.2}{Caracteriza\347\343o dos dados}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Caracteriza\347\343o geral dos dados}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.2}{Questoes a serem respondidas}{section.2}% 6
 \BOOKMARK [1][-]{section.3}{Preparacao dos dados para visualicao}{}% 7
-\BOOKMARK [1][-]{section.4}{Tecnica de visualização desenvolvida}{}% 8
+\BOOKMARK [1][-]{section.4}{Tecnica de visualiza\347\343o desenvolvida}{}% 8
 \BOOKMARK [2][-]{subsection.4.1}{Histograma}{section.4}% 9
 \BOOKMARK [2][-]{subsection.4.2}{Heatmaps}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.3}{Grafico em pizza}{section.4}% 11
@@ -15,4 +15,4 @@
 \BOOKMARK [2][-]{subsection.4.7}{Matriz de correlacao}{section.4}% 15
 \BOOKMARK [2][-]{subsection.4.8}{Heatmap com Google Maps}{section.4}% 16
 \BOOKMARK [1][-]{section.5}{Resultados}{}% 17
-\BOOKMARK [1][-]{section.6}{Conclusao}{}% 18
+\BOOKMARK [1][-]{section.6}{Conclus\343o}{}% 18
