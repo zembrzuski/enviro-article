@@ -74,33 +74,6 @@
   \author{Sibgrapi paper ID: \jemsid \\ }
 \fi
 
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-% 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
-
-
-
-%------------------------------------------------------------------------- 
-% Special Sibgrapi teaser
-%\teaser{%
-%  \oneimage{Teasing result of our method: from this data input (left), the relevant feature are extracted using our technique (middle), producing effective result (right).}{.99}{sibgrapi.png}
-%}
-%------------------------------------------------------------------------- 
-
-
 
 % make the title area
 \maketitle
@@ -143,7 +116,7 @@ envirocar; smartcars; kibana; geolocation; data visualization;
 Envirocar eh um projeto da Universidade de Munster. O objetivo 
 do projeto eh oferecer uma plataforma simples para coleta, 
 armazenamento e distribuicao de dados ambientais e dados de logistica
-de trafego [ref]. 
+de trafego. 
 
 A plataforma une dados gerados por sensores comuns,
 que vem na maioria dos automoveis atuais com sensores de 
@@ -450,7 +423,7 @@ eh  ela  que ira apresentar os dados armazenados no ElasticSearch, em uma interf
 browser, altamente customizável com histogramas, mapas e outros painéis que propiciam uma visão
 geral sobre os dados.  O Kibana possibilita transformar os logs em informações úteis (valor)
 através  de Dashboards,  pois  permite  realizar  correlação  de  eventos,  filtrar logs
-por  origem, hospedeiros, entre outras combinações (VAARANDI; NIZINSKI, 2013).
+por  origem, hospedeiros, entre outras combinações.
 
 Foi utilizado o ElasticSearch como base primaria dos dados, pois alem do suporte a persistencia,
 vem junto com uma serie de mecanismos e algoritmos de recuperacao de informacao. A ferramenta
@@ -476,7 +449,8 @@ motorista frequenta com maior frequencia.
 %------------------------------------------------------------------------- 
 \subsection{Histograma}
 
-Com o intuito de saber se muita gente utiliza a plataforma envirocar, foi desenvolvido
+Com o intuito de descobrir se existem muitos registros no banco de dados e, sobretudo,
+quais sao os periodos em que a ferramente envirocarm sao mais utilizados, foi desenvolvido
 um histograma em que o eixo x corresponde a variavel temporal e o eixo y corresponde
 a quantidade de viagens naquele periodo de tempo. Com isso, podera ser inferido se bastante
 gente vem utilizando a ferramenta e, principalmente, se se uso vem crescendo ou decrescendo
@@ -528,7 +502,7 @@ na Europa. Contudo, existem pessoas utilizando em diversos outros pontos do glob
 \subsection{Grafico em pizza}
 
 O heatmap deu uma ideia basica sobre a quantidade de pessoas que utilizam a plataforma ao redor
-do globo. Entretanto, nao trouxe uma idea definitiva sobre as proporcoes de cada regiao.
+do globo. Entretanto, nao trouxe uma ideia definitiva sobre as proporcoes de cada regiao.
 
 Para isso, sera utilizado um grafico em pizza, que traz claramente a ideia de proporcoes ao
 usuario, ao dispor em fatias cada segmento analizado.
@@ -536,15 +510,15 @@ usuario, ao dispor em fatias cada segmento analizado.
 Nesse grafico, sera utilizado o cluster inferido visualmente do heatmatp com as seguintes
 regioes: Europa, America do Norte, America do Sul, India e Australia.
 
-Aqui, pode-se observar a imensa maioria, de fato, utilizando na Europa: 97\% dos usuarios
+Aqui, pode-se observar a maioria, de fato, utilizando na Europa: 97\% dos usuarios
 esta la. Temos alguma representatividade, com 1\% dos Usuarios na America do Norte e 1\% 
 na Australia.
 
 Na America do Sul e na India, nao chega a 1\% de usuarios. Parece ter sido realmente um usuario
 curioso que comecou a utilizar a plataforma em sua terra natal.
 
-Essa informacao podera ser utilizada de uma maneira que achei incrivel: para comparacao de
-dados globais, como estatisticas e tentativas de detecao de comportamento em massa, devera
+Essa informacao podera ser utilizada da seguinte maneira: para comparacao de
+dados globais, como estatisticas e tentativas de deteccao de comportamento em massa, devera
 ser dado foco nos usuarios da Europa.
 
 Entretanto, essa falta de representatividade em outras partes do globo podera favorecer um
@@ -615,10 +589,9 @@ que, de fato, elas acontecem.
 %------------------------------------------------------------------------- 
 \subsection{Sunburst}
 
-A Sunburst visualization is a radial space-filling visualization technique for displaying tree like structures. 
-There are other space-filling visualization methods that use other visual encodings for describing hierarchies.
-
-Essa tecnica mostra-se muito adequada para condensar informacoes hierarquicas, como para responder a pergunta:
+A visualizacao por sunburst eh uma tecnica de visualizacao radial apra exibir estruturas hierarquicas
+como arvores. Essa tecnica mostra-se muito adequada para condensar informacoes hierarquicas, 
+como para responder a pergunta:
 para cada fabricante, qual eh o modelo de automovel mais utilizado. 
 
 Como na Europa existe uma amostra muito mais significicativa do que em outras regioes do globo, a
@@ -709,33 +682,36 @@ mais suporte a visualizacoes e trabalhos estatisticos do que o Kibana.
 Nessa representacao, quanto mais azul e quanto mais cheio esta o circulo superior, maior
 eh a correlacao entre os atributos. Observamos que quanto maior o consumo de combustivel,
 maior eh a quantidade de gas carbonico emitido. Observamos tambem que existe grande
-correlacao entre rpm e velocidade, o que me surpreendeu um pouco, ate. Outra coisa
-que me surpeendeu um pouco foi que parece nao haver correlacao entre velocidade e duracao
-de uma viagem. Me surpreendeu porque normalmente eu ando em velocidade mais alta quando
-faco viagens mais longas. Mas acho que na Europa nao eh assim que acontece. Existem
-outras coisas que se pode observar por ai tb.
+correlacao entre rpm e velocidade. 
+
+Um ponto a ser considerado eh que parece nao haver correlacao entre velocidade e duracao
+de uma viagem. Inicialmente pode-se supor que em viagens mais longas se tende a andar
+mais rapidamente. Aqui, entrentanto, esse fato nao pode ser observado.
 
 \oneimage{ Diversos atributos seccionado por fabricante.}{.99}{correlacao.png}
 
 
 %------------------------------------------------------------------------- 
-\subsection{Mais um heatmap}
+\subsection{Heatmap com Google Maps}
 
-Com intuito de fazer uma analise micro, isto eh, em vez de analizar uma populacao inteira
-em determinada regiao, decidi por fazer umas visualizacoes micro. Isto eh, para cara conjunto
-de viagens que eu tenho razoes suficientes para crer que sejam da mesma pessoa, fiz um
-heatmap das viagens que ela faz. 
+Para uma analise individual de determinados motoristas, sera utilizada novamente a tecnica de heatmaps.
+Infereriu-se que registros de uma regiao isolada -- como Brasil ou India --, em que existem poucos
+registros na base, correspondem ao mesmo motorista.
 
-Com isso, observamos que em muitos casos, as pessoas realmente costumam fazer o mesmo deslocamento
-periodicamente. Observe as figuras X e Y, em que os pontos muito escuros indicam que o usuario
-fez aquele caminho muitas vezes. 
+Com essa hipotese, sao plotadas as viagens de um determinado motorista. As regioes mais escuras no
+mapa indicam que ele passou por aquele lugar muitas vezes. Regiose claras indicam lugares que ele
+frequentou pouco. 
 
-Com isso, observamos que esse dataset pode ser utilizado, sim, para treinar algum algoritmo
-que seja capaz de predizer, para um determinado usuario, onde ele estara em determinado periodo 
-de tempo.
+Espera-se dessa maneira, verificar se os caminhos de um determinado motorista sao recorrentes ou nao.
+Alem disso, espera-se verificar se essa tecnica eh adequada para vislumbrar essa hipotese.
 
-Alem disso, pode-se fazer uma analise em real time para saber o quao longe o usuario esta dos
-lugares que ele costuma ir.
+Na primeira figura, observamos que o motorista passou muitas vezes pela mesma rota, dada a linha escura.
+Na segunda figura, observamos que o motorista nao repete muitas trajetorias. Na terceira figura, observa-se
+que em algumas rotas o motorista usa muitas vezes e em algumas rotas ele frequenta pouco.
+
+Esse terceiro mapa apoia a ideia de que a tecnica do heatmap pode ser utilizada com muita eficiencia par
+verificar rotas recorrentes, pois claramente se observa pontos escuros que, de fato, correspondem as 
+rotas mais utilizadas.
 
 \oneimage{ aaa.}{.99}{smooth_americano_se_repete_muito.png}
 
@@ -766,104 +742,21 @@ as perguntas que puderam ser respondidas.
   e fabricantes cujos veiculos poluem mais e quais poluem menos. Vimos, nesse mesmo grafico de radar,  
   quais sao os que gastam mais e os que gastam menos combustivel.
 
-  \item observamos ainda que esse dataset, embora nao seja tao rico quanto se supunha no inicio,
-    ainda assim ele pode ser utilizado para se detectar padroes de comportamento individuais 
-    nas pilotagens.
+  \item observamos ainda que esse dataset, embora nao seja tao rico quanto se supunha no inicio. Para
+  treinamento de modelos de aprendizagem de maquinas, supoe-se que essa base nao seja suficiente
 
-  \item COLOCAR QUE, DE FATO, AS VIAGENS SE REPETEM PERIODICAMENTE.
+  \item A tecnica de heatmap se mostra bastante eficiente par visualizar rotas repetidas, pois deu
+  claramente essa nocao ao usuario
+
+  \item Heatmaps realmente ajudam a se ter uma ideia sobre as regioes que possuem maior uso da ferramenta.
+  Entretanto, para se ter uma nocao mais exata de proporcoes, foi necessaria uma visualizacao em pizza.
+
+  \item Os graficos de radar ajudaram a ter claramente uma ideia de muitos atributos sintetizados numa
+  pequena regiao espacial.
 
 \end{itemize}
 
 
-
-%==========================================
-%\section{Experiments}
-%
-%We validate our technique through a series of experiments.
-
-
-%------------------------------------------------------------------------- 
-%\paragraph*{First experiment}
-%
-%The first experiment checks this aspect of our method on perfect examples.
-
-
-%------------------------------------------------------------------------- 
-%\paragraph*{Second experiment}
-%
-%The second experiment checks the speedup obtained by the implementation strategy compared to previous technique~\cite{Sibgrapi2015}.
-
-
-%------------------------------------------------------------------------- 
-%\paragraph*{Third experiment}
-%
-%The last experiment test our method on real data.
-
-
-
-%==========================================
-%\section{Results and Discussion}
-%
-%We performed the above-mentioned experiments on the following type of data: \ldots{} For each data, we used the following tuning parameters of our method.
-
-
-%\begin{table}
-%\caption{Performances results: timings are expressed in milliseconds.}
-%\label{tab:perfs}
-%\centering
-%\begin{tabular}{lr|rr|c}
-%\multicolumn{1}{c}{\bf Data} &
-%\multicolumn{1}{c|}{\bf Size} &
-%\multicolumn{1}{c}{\bf Ours} &
-%\multicolumn{1}{c|}{\bf Previous} &
-%\multicolumn{1}{c}{\bf Gain} \\ \hline
-%Data 1	&        50 	& 0.1 &     1 000	& x$10^3$ \\
-%Data 2	&      100 	& 0.2 &     2 000	& x$10^3$ \\
-%Data 3	&      500 	& 0.8 &   10 000	& x$10^3$ \\
-%Data 4	&   1 000 	& 1.2 &   20 000	& x$10^3$ \\
-%Data 5	&   5 000 	& 1.9 & 100 000	& x$10^4$ \\
-%Data 6	& 10 000 	& 2.1 & 200 000	& x$10^4$
-%\end{tabular}
-%\end{table}
-%
-%------------------------------------------------------------------------- 
-%\subsection{Performances}
-%%
-%We report on Table~\ref{tab:perfs} the performances of our technique on a computer at xxGhz with this graphic card.
-%We observe that our technique outperforms previous approaches on this kind of data, and an equivalent result on this other kind of data.
-
-%\subimages[htb]{Quality assessment}{quality}{
-%  \subimage{.48}{sibgrapi}%
-%  \subimage{.48}{sibgrapi}%
-%}
-
-
-%------------------------------------------------------------------------- 
-%\subsection{Quality}
-%
-%As observed on \figref{quality}, our method achieve good results in this situation. 
-%This can be measured by this criterion, and the results are reported on Table~\ref{tab:quality}.
-
-%\begin{table}
-%\caption{Quality measures: timings are expressed in milliseconds.}
-%\label{tab:quality}
-%\centering
-%\begin{tabular}{l|r|r}
-%\multicolumn{1}{c}{\bf Images} &
-%\multicolumn{1}{c|}{\bf PSNR} &
-%\multicolumn{1}{c}{\bf  MSE} \\ \hline
-%Image 1	&  40.2	& 0.02 \\
-%Image 2	&  30.9	& 1.02 \\
-%Image 3 &  20.1 & 0.18 \\
-%\end{tabular}
-%\end{table}
-
-
-%------------------------------------------------------------------------- 
-%\subsection{Limitation}
-%
-%As mentioned in Section~\ref{sec:technique}, we expect our method to suit better this kind of data. On the other kind, this particularity does not fit into our formulation for this and that reason. Indeed, this can be observed in the results of \figref{quality}. 
-%We plan to improve for that kind of data in future work. However, our technique performed well on this data, which does not respect our condition, since this other aspect reduced the negative impact of its characteristic.
 
 
 %==========================================
@@ -897,16 +790,13 @@ mais leigos.
 \section*{References}
 %
 
-\begin{itemize}
-  \item xxxx
-  \item xxxx
-  \item xxxx
-  \item xxxx
-  \item xxxx
-  \item xxxx
-  \item xxxx
-  \item xxxx
-\end{itemize}
+\begin{enumerate}
+  \item JIRKA, S, RAMKE, A, BRORING, A: enviroCar – Crowd Sourced Traffic and Environment Data for Sustainable Mobility
+  \item BRORING, A; STASCH, C: enviroCar:  A Citizen Science Platform  for Analyzing and Mapping Crowd-Sourced Car Sensor  Data
+  \item LIN, MAIO; JING WEN: Mining GPS data  for mobility  patterns: A survey
+  \item VIDAL, WILLIAN. Estudo de viabilidade para detecção de intrusão usando técnicas de Big Data para a análise de logs
+  \item VAARANDI, R.; NIZINSKI, P. Comparative analysis of open-source log management solutions for security monitoring and network forensics
+\end{enumerate}
 
 \fi
 
