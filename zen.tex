@@ -68,7 +68,7 @@
       Programa de Pos Graduacao em Ciencia da Computacao\\
       Universidade Federal do Rio Grande do Sul - UFRGS\\
       Porto Alegre, Brasil\\
-      Web page: \href{http://www.inf.ufrgs.br/~rczembrzuski}{http://inf.ufrgs.br/$\sim$rczembrzuski}}
+      Web page: http://inf.ufrgs.br/$\sim$rczembrzuski}
   }
 \else
   \author{Sibgrapi paper ID: \jemsid \\ }
@@ -148,52 +148,48 @@ de trafego [ref].
 A plataforma une dados gerados por sensores comuns,
 que vem na maioria dos automoveis atuais com sensores de 
 geolocalizacao, presente na maioria dos smartphones. Com isso,
-cria-se uma base de dados supostamente relevante para se medir o fluxo de automoveis
+cria-se uma base de dados supostamente relevante para que seja medido o fluxo de automoveis
 nas avenidas e quantidade de emissao de poluentes nas cidades. 
 
 %------------------------------------------------------------------------- 
 \subsection{Motivacao}
 %
+
 Um dos grandes desafios da sociedade nos nossos dias eh preservar
-e desenvolver a mobilidade urbana de maneira sustentavel, isto eh,
-mitigar o impacto do transporte de passageiros meio-ambiente [ref].
+e desenvolver a mobilidade urbana de maneira sustentavel. Isto eh,
+mitigar o impacto do transporte de passageiros meio-ambiente e no
+bem-estar geral das pessoas [ref].
 
-Alem disso, observar padroes de comportamento nos motoristas e nas
-cidades ao longo do mundo pode ser interessante tanto para ajuda-los
-em alguma coisa, quanto para ver diferencas culturais de paises e 
-culturas diferrentes evidenciadas no modo em que dirigem.
+Uma base de dados consistente eh crucial para que se confirme
+-- ou refute -- hipoteses relativas a comportamento no transito
+em diferentes partes do globo. Alem disso, a base consistente
+pode ser muito importante para a inferencia de padroes comportamento 
+e de pilotagem dos motoristas de automovel. 
+
+Uma analise exploratoria eh um passo necessario para que se verifique
+se a base realmente pode ser utilizada com os propositos citados 
+ou se ela deve ser descartada.
 
 
-%\subimages[htb]{Technique overview}{overview}{%
-%  \subimage[First step]{.31}{sibgrapi}%
-%  \subimage[Second step]{.31}{sibgrapi}%
-%  \subimage[Result]{.31}{sibgrapi}%
-%}
 %------------------------------------------------------------------------- 
 \subsection{Objetivos}
 %
 O objetivo desse trabalho eh fazer uma exploracao basica pela base dados
-para ganhar intuicao sobre ela. Para observar se padroes basicos de 
-comportamento dos usuarios podem ser detectados conforme ideias
-basicas que se tem sobre isso e, por fim, para saber se a base de dados
-pode ser utilizada como base para experimentos mais complexos, como 
-treinamento de modelos de aprendizagem para um ganho no mundo relevante,
-como melhorias no trafego, detecação de anomalias em comportamentos 
-e outras cositas mais. 
+para ganhar intuicao sobre ela.  Serao observados padroes basicos de 
+comportamento em diferentes partes do globo e tambem padroes individuais
+de pilotagem para determinados motorias.
+
+Com isso, sera determinado se o uso dessa base pode ser aconselhavel
+em experimentos mais complexos, como 
+treinamento de modelos de aprendizagem . 
 
 %------------------------------------------------------------------------- 
-\paragraph*{Contributions}
+\paragraph*{Contribuicoes}
 %
-Acredito que esse trabalho possa dar um insight interessante sobre
-o quao relevante esse dataset pode ser para a observacao de comportamento
-dos motoristas.
-
-
-
-%------------------------------------------------------------------------- 
-\subsection{Resultados esperados}
-%
-In order to produce this application, we start with this processing, followed by this technique. In order to cope with this challenge, we introduce this formulation to produce this intermediate result. The formulation leads to this type of system, which is efficiently solved by adapting this technique. The final result is produced by this transform. The whole process is schematized in \figref{overview}.
+O trabalho dara uma sugestao sobre a possibilidade de uso da base de dados
+envirocar em projetos de aprendizagem de maquina. Tambem sera feita uma
+analise comparativa entre diferentes tecnicas de visualizacao dos dados
+coletados.
 
 
 %==========================================
@@ -403,49 +399,40 @@ time               & temporal       \\
 
 
 \subsection{Questoes a serem respondidas}
-Existe uma serie de questoes que me vem rah cabeca nesse instante que,
-inclusive, ja tomei notas.
+
+A ideia basica eh responder questoes relativas a (a) padroes de motoristas
+em diferentes partes do globo, (b) padroes de comportamento individual no
+volante e (c) possibilidade de uso da base em modelos de aprendizagem de maquina.
 
 \begin{itemize}
-  \item quais marcas/modelos consomem mais gasolina?
-  \item quais marcas/modelos poluem mais o meio ambiente?
-  \item qual o perfil de pilotagem de cada automovel?
-  \item muita gente usa esse dataset?
-  \item de que lugares sao as pessoas que utilizam esse sistema? no Brasil, no mundo?
-  \item existe muita gente utilizando esse sistema hoje em dia?
-  \item quais os modelos e fabricantes mais comuns?
-  \item os modelos e fabricantes mais comum na Europa sao os mesmos do Brasil?
-  \item quais sao as marcas e modelos que mais poluem? quais sao as marcas e modelos que menos poluem?
-  \item podemos descobrir quais sao as regioes mais poluidas e regioes menos poluidas?
-  \item eh possivel utilizar este dataset para extrair padroes de comportamento de cada usuario?
+  \item Existem muitos registros nesse banco de dados?
+  \item Em quer periodo de tempo esse banco de dados foi utilizado? Ainda hoje ele eh bastante utilizado?
+  \item Em que regioes do globo estao os usuarios desse sistema?
+  \item Os modelos e fabricantes mais comum na Europa sao os mesmos do Brasil?
+  \item Quais marcas e modelos consomem mais combustivel?
+  \item Quais os modelos e fabricantes mais comuns?
+  \item Quais sao as marcas e modelos que mais poluem? quais sao as marcas e modelos que menos poluem?
+  \item Podemos descobrir quais sao as regioes mais poluidas e regioes menos poluidas?
+  \item Eh possivel utilizar este dataset para extrair padroes de comportamento de um determinado usuario?
 \end{itemize}
-
-
 
 
 %==========================================
 \section{Preparacao dos dados para visualicao}
 
-O envirocar eh uma base aberta de dados para quem quiser usar. Simples assim. Entretanto,
-eles nao colocam seu banco de dados para que seja feito download de forma simples. Eles 
-expoem um servico REST que, de forma simplificada, oferece um acesso facil aos dados.
+O envirocar eh uma base aberta de dados. Entretanto, nao existe uma forma de simples 
+para fazer download da base inteira. A entrega dos dados eh feita via servicos REST
+que possibilitam acesso a determinadas partes do banco de dados.
 
-Para que eu pudesse fazer a visualizacao de maneira geral, primeiramente eu fiz um script
-que baixava cada uma das viagens para minha maquina e as indexava no elasticsearch. O script
-rodou por horas, porque eu fiz download de maneira sequencial, ate para nao acocar o servidor
-dos caras.
+Para que se realizasse a obtencao da base inteira para que pudessem ser feitas as 
+visualizacoes, utilizou-se um script capaz de varrer a base de maneira sequencial. 
+Esse mesmo script eh responsavel pela persistencia dos dados no elasticsearch.
 
-A base de dados ate nao eh muito grande. Sao 15 mil viagens, o que nao parece muito. Entretanto,
-o volume de dados eh relativamente grande, pois para cada viagem, eh enviado para o banco de dados
-uma serie de informacoes a cada 2 segundos. Entao, embora o numero de viagens seja relativamente 
-pequeno, o tamanho de cada viagem eh grande. Para se ter uma ideia, minha base indexada no elasticsearch 
-ocupou 6 Gb de disco.
-
-Alem disso, para poder facilitar as visualizacoes, eu fiz uma serie de metricas. Por exemplo, 
-para comparar quais carros emitem mais gas carbonito, por exemplo, para cada viagem eu computei
-a media do gas carbonico emitido naquela viagem, pois a base de dados nao oferece issos. A base de
-dados oferece uns dados longos e, se eu quiser manter isso no artigo, vou ter que dar
-um jeito de explicar muito bem, porque ficou uma bosta, no fim das contas.
+A base de dados possui 15 mil viagens. O numero bruto nao eh tao grande quanto se supunha,
+mas, para cada vaigem, eh enviado ao banco de dados uma serie de informacoes a cada dois
+segundos. Dessa maneira, embora o numero de viagens seja relativamente 
+pequeno, o tamanho de cada viagem eh grande. A indexada no elasticsearch 
+ocupou 6 Gb de memoria em disco.
 
 
 
@@ -453,10 +440,11 @@ um jeito de explicar muito bem, porque ficou uma bosta, no fim das contas.
 \section{Tecnica de visualização desenvolvida}
 \label{sec:technique}
 %
-A exploracao dos dados foi feito com com o uso de duas ferramentas: Kibana e R.
 
+A exploracao dos dados foi feita com tres abordagens. Uso de Kibana, linguagem R
+e API de mapas do Google.
 
-Kibana eh uma ferramenta utilizada para nalise por inspecao manual e visualizacao
+Kibana eh uma ferramenta utilizada para analise por inspecao manual e visualizacao
 de informacoes que funciona de maneira natural com o ElasticSearch. Dessa  forma, 
 eh  ela  que ira apresentar os dados armazenados no ElasticSearch, em uma interface,  via
 browser, altamente customizável com histogramas, mapas e outros painéis que propiciam uma visão
@@ -466,21 +454,24 @@ por  origem, hospedeiros, entre outras combinações (VAARANDI; NIZINSKI, 2013).
 
 Foi utilizado o ElasticSearch como base primaria dos dados, pois alem do suporte a persistencia,
 vem junto com uma serie de mecanismos e algoritmos de recuperacao de informacao. A ferramenta
-permite combinar geolocalizacao com full-text search, structured text, and analytics.
+permite combinar geolocalizacao com outras tecnicas de recuperacao de informacoes baseadas
+em texto.
 
 Outras ferramenta para visualizacao de informacoes utilizada foi a linguagem R. A linguagem
 tambem possui uma variada gama de tecnicas para visualizacao de dados, alem de possuir um
 suporte muito grande a questoes de estatistica e de probabilidade. 
 
 O R nao eh uma ferramenta de tao alto nivel de abstracao quanto o kibana em que, uma vez
-que os dados estao persistidos, se montam visualizacoes com alguns cliques. Aqui, eh necessario
-que se escreva codigo para que as visualizacoes aparecam. Os graficos nao aparecem de uma
-forma tao elegante quanto o elasticsearch, mas possui muito mais flexibilidade, maleabilidade
-e estensibilidade que o kibana. Alem disso, existe um conjunto muito mais vasto de visualizacoes
-que o kibana, como boxplots e matrizes de correlacoes.
+que os dados estao persistidos, se montam visualizacoes de maneira simplificada. Em
+vez disso, eh necessario
+que se escreva codigo para que as visualizacoes aparecam. Os graficos surgem da maneira
+mais crua do que no Kibana, mas possui muito mais flexibilidade, maleabilidade
+e estensibilidade. Alem disso, existe um conjunto muito mais vasto de visualizacoes
+que o kibana, com vieses mais estatisticos, como boxplots e matrizes de correlacoes.
 
-Dessa maneira, a combinacao de ferramentas se fez necessaria, para atingir requisitos um pouco
-diferentes. Essa combinacao trara uma experiencia legal para o usuario.
+Por fim, para detectar padroes de comportamente individuais, foi implementada utilizando
+a API do Google Maps uma ferramenta simples para visualizar por quais lugares um determinado
+motorista frequenta com maior frequencia.
 
 %------------------------------------------------------------------------- 
 \subsection{Histograma}
