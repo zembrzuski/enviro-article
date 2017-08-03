@@ -82,17 +82,20 @@
 
 
 \begin{abstract}
-Envirocar é um projeto que coleta e armazena dados ambientais e dados de tráfego
-de automóveis. 
-São dados de sensores implantados dentro dos veículos que trazem informações
-precisas sobre navegação dos carros e dados relativos à conservação do meio-ambiente, 
-como emissão de gá-carbonico e consumo do veículo. 
+Envirocar is a project that collects and stores traffic and environment data for
+sustainable mobility. 
 
-Esse artigo tem por objetivo caracterizar os dados e apresentar uma serie de 
-visualizações para análise exploratória desse banco de dados. Com isso, será
-obtida uma intuição sobre o tipo de dados apresentado. Além disso, serão obtidas
-informações acuradas sobre a viabilidade do uso desse banco de dados para modelagem
-de algoritmos de aprendizado de máquina.
+They are feeded by sensors deployed within vehicles, that brings accurate information
+about the car navigation and environmental data, such as the emission of carbon dioxide 
+and fuel consumption of the vehicle.
+
+This article aims to characterize the dataset and presents a series of
+views for exploratory analysis of this database. With this, it will be
+obtained intuition about the type of data presented. In addition,
+accurate information on the feasibility of using this database for modeling
+machine learning algorithms.
+
+
 
 % DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
 %
@@ -412,7 +415,7 @@ ocupou 6 Gb de memoria em disco.
 
 
 %==========================================
-\section{Tecnica de visualização desenvolvida}
+\section{técnica de visualização desenvolvida}
 \label{sec:technique}
 %
 
@@ -552,10 +555,10 @@ do que os da America do Sul?
 Para responder essa pergunta, algumas visualizações foram feitas algumas suposicoes de técnicas
 de visualização: sunbsurst e nugget. 
 
-A tecnica de sunbsurst nao pareceu muito adequada devido a quantidade de informações -- muito grande para
+A técnica de sunbsurst nao pareceu muito adequada devido a quantidade de informações -- muito grande para
 um espaco pequeno -- e o biscoito nao transpareceu de maneira clara o que estava sendo perguntado.
 
-Para isso, foi utilizada novamente a tecnica de visualização de graficos em pizza. Entretanto, agora,
+Para isso, foi utilizada novamente a técnica de visualização de graficos em pizza. Entretanto, agora,
 em vez de plotar somente um grafico, o foram plotados 5 graficos em pizza, em que cada pizza corresponde
 a uma regiao do cluster. Essa visualização foi escolhida em detrimento do sunburst pois a segmentacao
 trouxe mais evidencia para respoder aquilo que estava sendo perguntado. O sunburst trouxe muita informacao
@@ -591,8 +594,8 @@ que, de fato, elas acontecem.
 %------------------------------------------------------------------------- 
 \subsection{Sunburst}
 
-A visualização por sunburst é uma tecnica de visualização radial apra exibir estruturas hierarquicas
-como arvores. Essa tecnica mostra-se muito adequada para condensar informações hierarquicas, 
+A visualização por sunburst é uma técnica de visualização radial apra exibir estruturas hierarquicas
+como arvores. Essa técnica mostra-se muito adequada para condensar informações hierarquicas, 
 como para responder a pergunta:
 para cada fabricante, qual é o modelo de automóvel mais utilizado. 
 
@@ -696,7 +699,7 @@ mais rapidamente. Aqui, entrentanto, esse fato nao pode ser observado.
 %------------------------------------------------------------------------- 
 \subsection{Heatmap com Google Maps}
 
-Para uma análise individual de determinados motoristas, será utilizada novamente a tecnica de heatmaps.
+Para uma análise individual de determinados motoristas, será utilizada novamente a técnica de heatmaps.
 Infereriu-se que registros de uma regiao isolada -- como Brasil ou India --, em que existem poucos
 registros na base, correspondem ao mesmo motorista.
 
@@ -705,21 +708,21 @@ mapa indicam que ele passou por aquele lugar muitas vezes. Regiose claras indica
 frequentou pouco. 
 
 Espera-se dessa maneira, verificar se os caminhos de um determinado motorista são recorrentes ou nao.
-Além disso, espera-se verificar se essa tecnica é adequada para vislumbrar essa hipotese.
+Além disso, espera-se verificar se essa técnica é adequada para vislumbrar essa hipotese.
 
 Na primeira figura, observamos que o motorista passou muitas vezes pela mesma rota, dada a linha escura.
 Na segunda figura, observamos que o motorista nao repete muitas trajetorias. Na terceira figura, observa-se
 que em algumas rotas o motorista usa muitas vezes e em algumas rotas ele frequenta pouco.
 
-Esse terceiro mapa apoia a ideia de que a tecnica do heatmap pode ser utilizada com muita eficiencia par
+Esse terceiro mapa apoia a ideia de que a técnica do heatmap pode ser utilizada com muita eficiencia par
 verificar rotas recorrentes, pois claramente se observa pontos escuros que, de fato, correspondem as 
 rotas mais utilizadas.
 
-\oneimage{ aaa.}{.99}{smooth_americano_se_repete_muito.png}
+\oneimage{ Linhas escuras indicam rotas que o usuário utilizou muitas vezes.}{.99}{smooth_americano_se_repete_muito.png}
 
-\oneimage{ bbb.}{.99}{smooth_australiano_nao_se_repete.png}
+\oneimage{ Linhas claras indicam que o usuário não utilizou muitas vezes a mesma rota.}{.99}{smooth_australiano_nao_se_repete.png}
 
-\oneimage{ ccc.}{.99}{smooth_brasileiro.png}
+\oneimage{ Linhas claras e escuras evidenciam quais rotas são as mais utilizadas.}{.99}{smooth_brasileiro.png}
 
 
 
@@ -747,7 +750,7 @@ as perguntas que puderam ser respondidas.
   \item observamos ainda que esse dataset, embora nao seja tao rico quanto se supunha no inicio. Para
   treinamento de modelos de aprendizagem de máquinas, supoe-se que essa base nao seja suficiente
 
-  \item A tecnica de heatmap se mostra bastante eficiente par visualizar rotas repetidas, pois deu
+  \item A técnica de heatmap se mostra bastante eficiente par visualizar rotas repetidas, pois deu
   claramente essa nocao ao usuario
 
   \item Heatmaps realmente ajudam a se ter uma ideia sobre as regioes que possuem maior uso da ferramenta.
