@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.2)  3 AUG 2017 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.2)  3 AUG 2017 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,73 +1010,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 
 LaTeX Warning: Label `tab:perfs' multiply defined.
 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \unhbox 
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-
-LaTeX Warning: Label `fig:smooth_australiano_n\IeC {\~a}o_se_repete.png' multip
-ly defined.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \unhbox 
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \accent@spacefactor 
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-! Bad space factor (0).
-<to be read again> 
-                   \accent@spacefactor 
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 50.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 50.
-! Extra \endcsname.
-\@namedef ...xpandafter \def \csname #1\endcsname 
-                                                  
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
-! Extra }, or forgotten $.
-\@newl@bel ...ined}}\global \@namedef {#1@#2}{#3}}
-                                                  
-l.50 ...eatmap com Google Maps}{subsection.4.8}{}}
-                                                  
-? 
 )
-! Missing $ inserted.
-<inserted text> 
-                $
-l.47 \begin{document}
-                     
-? 
 \openout1 = `zen.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
@@ -1096,16 +1030,7 @@ LaTeX Font Info:    ... okay on input line 47.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
-Overfull \hbox (25.33511pt too wide) in paragraph at lines 50--13
-[][]\OT1/ptm/m/n/10 ao$[]\OML/cmm/m/it/10 e[]epete:png[][]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--13
-
- []
-
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count130
 \scratchdimen=\dimen144
@@ -1152,29 +1077,29 @@ LaTeX Info: Redefining \nameref on input line 47.
 \openout3 = `zen.out'.
 
 \c@lstlisting=\count137
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 82.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 82.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 206.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [2
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 227.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 227.
- [3]
+ [2]
 Underfull \hbox (badness 1412) in paragraph at lines 466--468
 []\OT1/ptm/m/n/10 Nao se pode ob-ser-var, por-tanto, um uso mas-sivo da
  []
 
-<figs/simple_histogram.png, id=203, 748.7975pt x 567.11874pt>
+<figs/simple_histogram.png, id=196, 748.7975pt x 567.11874pt>
 File: figs/simple_histogram.png Graphic file (type png)
 
 <use figs/simple_histogram.png>
@@ -1199,8 +1124,8 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 469--470
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]
-<figs/heatmap.png, id=210, 513.92pt x 400.49625pt>
+ [3]
+<figs/heatmap.png, id=203, 513.92pt x 400.49625pt>
 File: figs/heatmap.png Graphic file (type png)
  <use figs/heatmap.png>
 Package pdftex.def Info: figs/heatmap.png used on input line 500.
@@ -1225,7 +1150,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 500--501
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<figs/pizza_por_regiao.png, id=211, 783.92876pt x 552.0625pt>
+<figs/pizza_por_regiao.png, id=204, 783.92876pt x 552.0625pt>
 File: figs/pizza_por_regiao.png Graphic file (type png)
 
 <use figs/pizza_por_regiao.png>
@@ -1250,8 +1175,8 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 536--537
 
 Underfull \vbox (badness 2600) has occurred while \output is active []
 
- [5 <./figs/simple_histogram.png> <./figs/heatmap.png>]
-<figs/marcas_por_regiao.png, id=216, 402.50375pt x 562.1pt>
+ [4 <./figs/simple_histogram.png> <./figs/heatmap.png>]
+<figs/marcas_por_regiao.png, id=209, 402.50375pt x 562.1pt>
 File: figs/marcas_por_regiao.png Graphic file (type png)
 
 <use figs/marcas_por_regiao.png>
@@ -1273,8 +1198,8 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 588--589
 []|  $[]$|   
  []
 
-[6 <./figs/pizza_por_regiao.png> <./figs/marcas_por_regiao.png>]
-<figs/sunburst_marca_modelo.png, id=221, 404.51125pt x 423.5825pt>
+[5 <./figs/pizza_por_regiao.png> <./figs/marcas_por_regiao.png>]
+<figs/sunburst_marca_modelo.png, id=214, 404.51125pt x 423.5825pt>
 File: figs/sunburst_marca_modelo.png Graphic file (type png)
 
 <use figs/sunburst_marca_modelo.png>
@@ -1297,7 +1222,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 614--615
 []|  $[]$|   
  []
 
-<figs/radar.png, id=222, 691.58376pt x 516.93124pt>
+<figs/radar.png, id=215, 691.58376pt x 516.93124pt>
 File: figs/radar.png Graphic file (type png)
  <use figs/radar.png>
 Package pdftex.def Info: figs/radar.png used on input line 650.
@@ -1318,7 +1243,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 650--651
 []|  $[]$|   
  []
 
-<figs/radar_modelos_ascending.png, id=223, 660.4675pt x 498.86375pt>
+<figs/radar_modelos_ascending.png, id=216, 660.4675pt x 498.86375pt>
 File: figs/radar_modelos_ascending.png Graphic file (type png)
 
 <use figs/radar_modelos_ascending.png>
@@ -1344,8 +1269,8 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 659--660
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./figs/sunburst_marca_modelo.png> <./figs/radar.png>]
-<figs/radar_modelo_descendin.png, id=229, 663.47874pt x 476.78125pt>
+ [6 <./figs/sunburst_marca_modelo.png> <./figs/radar.png>]
+<figs/radar_modelo_descendin.png, id=221, 663.47874pt x 476.78125pt>
 File: figs/radar_modelo_descendin.png Graphic file (type png)
 
 <use figs/radar_modelo_descendin.png>
@@ -1368,7 +1293,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 661--662
 []|  $[]$|   
  []
 
-<figs/correlacao.png, id=230, 666.49pt x 576.1525pt>
+<figs/correlacao.png, id=222, 666.49pt x 576.1525pt>
 File: figs/correlacao.png Graphic file (type png)
  <use figs/correlacao.png>
 Package pdftex.def Info: figs/correlacao.png used on input line 693.
@@ -1389,7 +1314,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 693--694
 []|  $[]$|   
  []
 
-<figs/smooth_americano_se_repete_muito.png, id=231, 588.1975pt x 213.79875pt>
+<figs/smooth_americano_se_repete_muito.png, id=223, 588.1975pt x 213.79875pt>
 File: figs/smooth_americano_se_repete_muito.png Graphic file (type png)
 
 <use figs/smooth_americano_se_repete_muito.png>
@@ -1413,7 +1338,7 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 718--719
  []
 
 
-<figs/smooth_australiano_nao_se_repete.png, id=232, 737.75626pt x 432.61626pt>
+<figs/smooth_australiano_nao_se_repete.png, id=224, 737.75626pt x 432.61626pt>
 File: figs/smooth_australiano_nao_se_repete.png Graphic file (type png)
 
 <use figs/smooth_australiano_nao_se_repete.png>
@@ -1439,9 +1364,9 @@ Overfull \hbox (12.0813pt too wide) in paragraph at lines 720--721
 
 Underfull \vbox (badness 3168) has occurred while \output is active []
 
- [8 <./figs/radar_modelos_ascending.png> <./figs/radar_modelo_descendin.png> <.
+ [7 <./figs/radar_modelos_ascending.png> <./figs/radar_modelo_descendin.png> <.
 /figs/correlacao.png> <./figs/smooth_americano_se_repete_muito.png>]
-<figs/smooth_brasileiro.png, id=237, 411.5375pt x 425.59pt>
+<figs/smooth_brasileiro.png, id=230, 411.5375pt x 425.59pt>
 File: figs/smooth_brasileiro.png Graphic file (type png)
 
 <use figs/smooth_brasileiro.png>
@@ -1476,7 +1401,7 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 820.
-[9 <./figs/smooth_australiano_nao_se_repete.png> <./figs/smooth_brasileiro.png>
+[8 <./figs/smooth_australiano_nao_se_repete.png> <./figs/smooth_brasileiro.png>
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 820.
  (./zen.aux)
@@ -1491,27 +1416,24 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 820.
  ) 
 Here is how much of TeX's memory you used:
- 9709 strings out of 493029
- 142787 string characters out of 6136235
+ 9707 strings out of 493029
+ 142755 string characters out of 6136235
  310022 words of memory out of 5000000
- 12982 multiletter control sequences out of 15000+600000
+ 12981 multiletter control sequences out of 15000+600000
  37098 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 43i,12n,40p,315b,2119s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,40p,315b,2118s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
-ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zen.pdf (9 pages, 1005966 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zen.pdf (8 pages, 979253 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 278 compressed objects within 3 object streams
- 139 named destinations out of 1000 (max. 500000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
+ 138 named destinations out of 1000 (max. 500000)
  205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
